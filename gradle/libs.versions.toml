@@ -1,0 +1,36 @@
+[versions]
+agp = "8.12.0"
+kotlin = "2.2.10"
+android-minSdk = "26"
+android-compileSdk = "36"
+mavenPublish = "0.34.0"
+kover = "0.9.1"
+androidxAnnotation = "1.9.1"
+kotlinxSerialization = "1.9.0"
+jmh = "1.37"
+jol = "0.17"
+kandy = "0.8.0"
+dokka = "2.0.0"
+
+[libraries]
+jmh-core = { module = "org.openjdk.jmh:jmh-core", version.ref = "jmh" }
+jmh-generator-annprocess = { module = "org.openjdk.jmh:jmh-generator-annprocess", version.ref = "jmh" }
+kandy = { module = "org.jetbrains.kotlinx:kandy-lets-plot", version.ref = "kandy" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "androidxAnnotation" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinxSerialization" }
+openjdk-jol-core = { module = "org.openjdk.jol:jol-core", version.ref = "jol"}
+
+[plugins]
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlinxKover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+allOpen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }

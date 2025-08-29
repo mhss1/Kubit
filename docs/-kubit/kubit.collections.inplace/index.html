@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>kubit.collections.inplace</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<link href="../../images/logo.png">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../index.html">
+                    Kubit
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+1.0.0-alpha01        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":kubit/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":kubit/commonMain"
+                                       data-filter=":kubit/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    Kubit
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="Kubit::kubit.collections.inplace////PointingToDeclaration//-1206441316">
+  <div class="breadcrumbs"><a href="../../index.html">Kubit</a><span class="delimiter">/</span><span class="current">kubit.collections.inplace</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1374564824%2FClasslikes%2F-1206441316" anchor-label="ChunkedList" id="1374564824%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-chunked-list/index.html"><span>Chunked</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1374564824%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">typealias </span><a href="-chunked-list/index.html">ChunkedList</a><span class="token operator">&lt;</span><a href="-chunked-list/index.html">T</a><span class="token operator">&gt;</span><span class="token operator"> = </span><a href="-windowed-list/index.html">WindowedList</a><span class="token operator">&lt;</span><a href="-chunked-list/index.html">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1608585372%2FClasslikes%2F-1206441316" anchor-label="InPlaceSubList" id="-1608585372%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-in-place-sub-list/index.html"><span>In</span><wbr></wbr><span>Place</span><wbr></wbr><span>Sub</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1608585372%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-in-place-sub-list/index.html">InPlaceSubList</a><span class="token operator">&lt;</span><a href="-in-place-sub-list/index.html">T</a><span class="token operator">&gt;</span> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-abstract-list/index.html">AbstractList</a><span class="token operator">&lt;</span><a href="-in-place-sub-list/index.html">T</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">A sublist view of a <span data-unresolved-link="kubit.collections.inplace/InPlaceSubList/sourceList/#/PointingToDeclaration/">sourceList</span> that provides access to a portion of the list within the specified range (<span data-unresolved-link="kubit.collections.inplace/InPlaceSubList/start/#/PointingToDeclaration/">start</span>, <span data-unresolved-link="kubit.collections.inplace/InPlaceSubList/end/#/PointingToDeclaration/">end</span>). Modifications to the original list are reflected in the sublist.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="325091379%2FClasslikes%2F-1206441316" anchor-label="WindowedList" id="325091379%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-windowed-list/index.html"><span>Windowed</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="325091379%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-windowed-list/index.html">WindowedList</a><span class="token operator">&lt;</span><a href="-windowed-list/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">sourceList<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-windowed-list/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">windowSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">stepSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span><span class="token punctuation">, </span></span><span class="parameter ">partialWindows<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-abstract-list/index.html">AbstractList</a><span class="token operator">&lt;</span><a href="-in-place-sub-list/index.html">InPlaceSubList</a><span class="token operator">&lt;</span><a href="-windowed-list/index.html">T</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Represents a list of windows as a list of <a href="-in-place-sub-list/index.html">InPlaceSubList</a> created from a source list. Each window is a view into the original list. Changes in the original list will be reflected in the windows.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-428221737%2FFunctions%2F-1206441316" anchor-label="chunkedInPlace" id="-428221737%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="chunked-in-place.html"><span>chunked</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Place</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-428221737%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="chunked-in-place.html">T</a><span class="token operator">&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="chunked-in-place.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="chunked-in-place.html"><span class="token function">chunkedInPlace</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">chunkSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-chunked-list/index.html">ChunkedList</a><span class="token operator">&lt;</span><a href="chunked-in-place.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Splits this list into a list of <a href="-in-place-sub-list/index.html">InPlaceSubList</a> each not exceeding the given <a href="chunked-in-place.html">chunkSize</a>. The last list may have less elements than the given <a href="chunked-in-place.html">chunkSize</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-597767434%2FFunctions%2F-1206441316" anchor-label="dropInPlace" id="-597767434%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="drop-in-place.html"><span>drop</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Place</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-597767434%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="drop-in-place.html">T</a><span class="token operator">&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="drop-in-place.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="drop-in-place.html"><span class="token function">dropInPlace</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">n<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="drop-in-place.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns a sublist containing all elements except first <a href="drop-in-place.html">n</a> elements. The sublist is a view into the original list. Changes in the original list will be reflected in the sublist.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="592008620%2FFunctions%2F-1206441316" anchor-label="dropLastInPlace" id="592008620%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="drop-last-in-place.html"><span>drop</span><wbr></wbr><span>Last</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Place</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="592008620%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="drop-last-in-place.html">T</a><span class="token operator">&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="drop-last-in-place.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="drop-last-in-place.html"><span class="token function">dropLastInPlace</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">n<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="drop-last-in-place.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns a sublist containing all elements except last <a href="drop-last-in-place.html">n</a> elements. The sublist is a view into the original list. Changes in the original list will be reflected in the sublist.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1241022450%2FFunctions%2F-1206441316" anchor-label="forEachChunk" id="-1241022450%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="for-each-chunk.html"><span>for</span><wbr></wbr><span>Each</span><wbr></wbr><span><span>Chunk</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1241022450%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="for-each-chunk.html">T</a><span class="token operator">&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="for-each-chunk.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="for-each-chunk.html"><span class="token function">forEachChunk</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">chunkSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><a href="-in-place-sub-list/index.html">InPlaceSubList</a><span class="token operator">&lt;</span><a href="for-each-chunk.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Iterates through the windowed chunks of this collection with given <a href="for-each-chunk.html">chunkSize</a>, where window step is equals to <a href="for-each-chunk.html">chunkSize</a> and calls <a href="for-each-chunk.html">action</a> on each chunk.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2016918888%2FFunctions%2F-1206441316" anchor-label="forEachChunkIndexed" id="-2016918888%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="for-each-chunk-indexed.html"><span>for</span><wbr></wbr><span>Each</span><wbr></wbr><span>Chunk</span><wbr></wbr><span><span>Indexed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2016918888%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="for-each-chunk-indexed.html">T</a><span class="token operator">&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="for-each-chunk-indexed.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="for-each-chunk-indexed.html"><span class="token function">forEachChunkIndexed</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">chunkSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><a href="-in-place-sub-list/index.html">InPlaceSubList</a><span class="token operator">&lt;</span><a href="for-each-chunk-indexed.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Iterates through the windowed chunks of this collection with given <a href="for-each-chunk-indexed.html">chunkSize</a>, where window step is equals to <a href="for-each-chunk-indexed.html">chunkSize</a> and calls <a href="for-each-chunk-indexed.html">action</a> on each chunk with its index.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1483842982%2FFunctions%2F-1206441316" anchor-label="forEachWindow" id="-1483842982%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="for-each-window.html"><span>for</span><wbr></wbr><span>Each</span><wbr></wbr><span><span>Window</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1483842982%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="for-each-window.html">T</a><span class="token operator">&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="for-each-window.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="for-each-window.html"><span class="token function">forEachWindow</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">windowSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">step<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span><span class="token punctuation">, </span></span><span class="parameter ">partialWindows<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><a href="-in-place-sub-list/index.html">InPlaceSubList</a><span class="token operator">&lt;</span><a href="for-each-window.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Iterates through the windows of the list and performs the given action on each window.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="47846518%2FFunctions%2F-1206441316" anchor-label="forEachWindowIndexed" id="47846518%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="for-each-window-indexed.html"><span>for</span><wbr></wbr><span>Each</span><wbr></wbr><span>Window</span><wbr></wbr><span><span>Indexed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="47846518%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="for-each-window-indexed.html">T</a><span class="token operator">&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="for-each-window-indexed.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="for-each-window-indexed.html"><span class="token function">forEachWindowIndexed</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">windowSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">step<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span><span class="token punctuation">, </span></span><span class="parameter ">partialWindows<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><a href="-in-place-sub-list/index.html">InPlaceSubList</a><span class="token operator">&lt;</span><a href="for-each-window-indexed.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Iterates through the windows of the list with their indices and performs the given action on each window.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1145940622%2FFunctions%2F-1206441316" anchor-label="takeInPlace" id="1145940622%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="take-in-place.html"><span>take</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Place</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1145940622%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="take-in-place.html">T</a><span class="token operator">&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="take-in-place.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="take-in-place.html"><span class="token function">takeInPlace</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">n<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="take-in-place.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns a sublist of the first <a href="take-in-place.html">n</a> elements. The sublist is a view into the original list. Changes in the original list will be reflected in the sublist.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="856598852%2FFunctions%2F-1206441316" anchor-label="takeLastInPlace" id="856598852%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="take-last-in-place.html"><span>take</span><wbr></wbr><span>Last</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Place</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="856598852%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="take-last-in-place.html">T</a><span class="token operator">&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="take-last-in-place.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="take-last-in-place.html"><span class="token function">takeLastInPlace</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">n<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="take-last-in-place.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns a sublist of the last <a href="take-last-in-place.html">n</a> elements. The sublist is a view into the original list. Changes in the original list will be reflected in the sublist.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1177029987%2FFunctions%2F-1206441316" anchor-label="windowedInPlace" id="-1177029987%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="windowed-in-place.html"><span>windowed</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Place</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1177029987%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="windowed-in-place.html">T</a><span class="token operator">&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="windowed-in-place.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="windowed-in-place.html"><span class="token function">windowedInPlace</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">windowSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">step<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span><span class="token punctuation">, </span></span><span class="parameter ">partialWindows<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-windowed-list/index.html">WindowedList</a><span class="token operator">&lt;</span><a href="windowed-in-place.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns a list of windows with the given <a href="windowed-in-place.html">windowSize</a> sliding with the given <a href="windowed-in-place.html">step</a>. Each window is a view into the original list. Changes in the original list will be reflected in the windows.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

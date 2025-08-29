@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>kubit.collections.list</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<link href="../../images/logo.png">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../index.html">
+                    Kubit
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+1.0.0-alpha01        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":kubit/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":kubit/commonMain"
+                                       data-filter=":kubit/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    Kubit
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="Kubit::kubit.collections.list////PointingToDeclaration//-1206441316">
+  <div class="breadcrumbs"><a href="../../index.html">Kubit</a><span class="delimiter">/</span><span class="current">kubit.collections.list</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1372413397%2FClasslikes%2F-1206441316" anchor-label="DoubleList" id="1372413397%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-double-list/index.html"><span>Double</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1372413397%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="-double-list-serializer/index.html">DoubleListSerializer::class</a></span><wbr></wbr><span class="token punctuation">)</span></div></div><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-double-list/index.html">DoubleList</a></div><div class="brief "><p class="paragraph"><a href="-double-list/index.html">DoubleList</a> is a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a>-like collection for <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a> values. It allows retrieving the elements without boxing. <a href="-double-list/index.html">DoubleList</a> is always backed by a <a href="-mutable-double-list/index.html">MutableDoubleList</a>, its <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-list/index.html">MutableList</a>-like subclass. The purpose of this class is to avoid the performance overhead of auto-boxing due to generics since <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-collection/index.html">Collection</a> classes all operate on objects.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1800321891%2FClasslikes%2F-1206441316" anchor-label="DoubleListSerializer" id="1800321891%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-double-list-serializer/index.html"><span>Double</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Serializer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1800321891%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-double-list-serializer/index.html">DoubleListSerializer</a> : <span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><a href="-double-list/index.html">DoubleList</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Serializer for <a href="-double-list/index.html">DoubleList</a> that handles serialization and deserialization of the list.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1685401820%2FClasslikes%2F-1206441316" anchor-label="FloatList" id="-1685401820%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-float-list/index.html"><span>Float</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1685401820%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="-float-list-serializer/index.html">FloatListSerializer::class</a></span><wbr></wbr><span class="token punctuation">)</span></div></div><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-float-list/index.html">FloatList</a></div><div class="brief "><p class="paragraph"><a href="-float-list/index.html">FloatList</a> is a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a>-like collection for <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a> values. It allows retrieving the elements without boxing. <a href="-float-list/index.html">FloatList</a> is always backed by a <a href="-mutable-float-list/index.html">MutableFloatList</a>, its <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-list/index.html">MutableList</a>-like subclass. The purpose of this class is to avoid the performance overhead of auto-boxing due to generics since <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-collection/index.html">Collection</a> classes all operate on objects.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1380324850%2FClasslikes%2F-1206441316" anchor-label="FloatListSerializer" id="1380324850%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-float-list-serializer/index.html"><span>Float</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Serializer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1380324850%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-float-list-serializer/index.html">FloatListSerializer</a> : <span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><a href="-float-list/index.html">FloatList</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Serializer for <a href="-float-list/index.html">FloatList</a> that handles serialization and deserialization of the list.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="833344945%2FClasslikes%2F-1206441316" anchor-label="IntList" id="833344945%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-int-list/index.html"><span>Int</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="833344945%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="-int-list-serializer/index.html">IntListSerializer::class</a></span><wbr></wbr><span class="token punctuation">)</span></div></div><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-int-list/index.html">IntList</a></div><div class="brief "><p class="paragraph"><a href="-int-list/index.html">IntList</a> is a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a>-like collection for <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a> values. It allows retrieving the elements without boxing. <a href="-int-list/index.html">IntList</a> is always backed by a <a href="-mutable-int-list/index.html">MutableIntList</a>, its <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-list/index.html">MutableList</a>-like subclass. The purpose of this class is to avoid the performance overhead of auto-boxing due to generics since <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-collection/index.html">Collection</a> classes all operate on objects.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-783413185%2FClasslikes%2F-1206441316" anchor-label="IntListSerializer" id="-783413185%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-int-list-serializer/index.html"><span>Int</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Serializer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-783413185%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-int-list-serializer/index.html">IntListSerializer</a> : <span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><a href="-int-list/index.html">IntList</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Serializer for <a href="-int-list/index.html">IntList</a> that handles serialization and deserialization of the list.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1203965898%2FClasslikes%2F-1206441316" anchor-label="LongList" id="1203965898%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-long-list/index.html"><span>Long</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1203965898%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span><span class="token punctuation">(</span><span>with<span class="token operator"> = </span><a href="-long-list-serializer/index.html">LongListSerializer::class</a></span><wbr></wbr><span class="token punctuation">)</span></div></div><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-long-list/index.html">LongList</a></div><div class="brief "><p class="paragraph"><a href="-long-list/index.html">LongList</a> is a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a>-like collection for <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a> values. It allows retrieving the elements without boxing. <a href="-long-list/index.html">LongList</a> is always backed by a <a href="-mutable-long-list/index.html">MutableLongList</a>, its <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-list/index.html">MutableList</a>-like subclass. The purpose of this class is to avoid the performance overhead of auto-boxing due to generics since <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-collection/index.html">Collection</a> classes all operate on objects.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-780517608%2FClasslikes%2F-1206441316" anchor-label="LongListSerializer" id="-780517608%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-long-list-serializer/index.html"><span>Long</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Serializer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-780517608%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-long-list-serializer/index.html">LongListSerializer</a> : <span data-unresolved-link="kotlinx.serialization/KSerializer///PointingToDeclaration/">KSerializer</span><span class="token operator">&lt;</span><a href="-long-list/index.html">LongList</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Serializer for <a href="-long-list/index.html">LongList</a> that handles serialization and deserialization of the list.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1174014007%2FClasslikes%2F-1206441316" anchor-label="MutableDoubleList" id="-1174014007%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mutable-double-list/index.html"><span>Mutable</span><wbr></wbr><span>Double</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1174014007%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-mutable-double-list/index.html">MutableDoubleList</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">initialCapacity<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">16</span></span></span><span class="token punctuation">)</span> : <a href="-double-list/index.html">DoubleList</a></div><div class="brief "><p class="paragraph"><a href="-mutable-double-list/index.html">MutableDoubleList</a> is a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-list/index.html">MutableList</a>-like collection for <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a> values. It allows storing and retrieving the elements without boxing. Immutable access is available through its base class <a href="-double-list/index.html">DoubleList</a>, which has a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a>-like interface.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1973233328%2FClasslikes%2F-1206441316" anchor-label="MutableFloatList" id="1973233328%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mutable-float-list/index.html"><span>Mutable</span><wbr></wbr><span>Float</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1973233328%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-mutable-float-list/index.html">MutableFloatList</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">initialCapacity<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">16</span></span></span><span class="token punctuation">)</span> : <a href="-float-list/index.html">FloatList</a></div><div class="brief "><p class="paragraph"><a href="-mutable-float-list/index.html">MutableFloatList</a> is a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-list/index.html">MutableList</a>-like collection for <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a> values. It allows storing and retrieving the elements without boxing. Immutable access is available through its base class <a href="-float-list/index.html">FloatList</a>, which has a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a>-like interface.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="122069053%2FClasslikes%2F-1206441316" anchor-label="MutableIntList" id="122069053%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mutable-int-list/index.html"><span>Mutable</span><wbr></wbr><span>Int</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="122069053%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-mutable-int-list/index.html">MutableIntList</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">initialCapacity<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">16</span></span></span><span class="token punctuation">)</span> : <a href="-int-list/index.html">IntList</a></div><div class="brief "><p class="paragraph"><a href="-mutable-int-list/index.html">MutableIntList</a> is a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-list/index.html">MutableList</a>-like collection for <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a> values. It allows storing and retrieving the elements without boxing. Immutable access is available through its base class <a href="-int-list/index.html">IntList</a>, which has a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a>-like interface.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="629249726%2FClasslikes%2F-1206441316" anchor-label="MutableLongList" id="629249726%2FClasslikes%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mutable-long-list/index.html"><span>Mutable</span><wbr></wbr><span>Long</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="629249726%2FClasslikes%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-mutable-long-list/index.html">MutableLongList</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">initialCapacity<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">16</span></span></span><span class="token punctuation">)</span> : <a href="-long-list/index.html">LongList</a></div><div class="brief "><p class="paragraph"><a href="-mutable-long-list/index.html">MutableLongList</a> is a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-mutable-list/index.html">MutableList</a>-like collection for <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a> values. It allows storing and retrieving the elements without boxing. Immutable access is available through its base class <a href="-long-list/index.html">LongList</a>, which has a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a>-like interface.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="619346217%2FFunctions%2F-1206441316" anchor-label="buildDoubleList" id="619346217%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="build-double-list.html"><span>build</span><wbr></wbr><span>Double</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="619346217%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="build-double-list.html"><span class="token function">buildDoubleList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">builderAction<span class="token operator">: </span><a href="-mutable-double-list/index.html">MutableDoubleList</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-double-list/index.html">DoubleList</a></div><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="build-double-list.html"><span class="token function">buildDoubleList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">initialCapacity<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">builderAction<span class="token operator">: </span><a href="-mutable-double-list/index.html">MutableDoubleList</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-double-list/index.html">DoubleList</a></div><div class="brief "><p class="paragraph">Builds a new <a href="-double-list/index.html">DoubleList</a> by populating a <a href="-mutable-double-list/index.html">MutableDoubleList</a> using the given <a href="build-double-list.html">builderAction</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="486991817%2FFunctions%2F-1206441316" anchor-label="buildFloatList" id="486991817%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="build-float-list.html"><span>build</span><wbr></wbr><span>Float</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="486991817%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="build-float-list.html"><span class="token function">buildFloatList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">builderAction<span class="token operator">: </span><a href="-mutable-float-list/index.html">MutableFloatList</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-float-list/index.html">FloatList</a></div><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="build-float-list.html"><span class="token function">buildFloatList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">initialCapacity<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">builderAction<span class="token operator">: </span><a href="-mutable-float-list/index.html">MutableFloatList</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-float-list/index.html">FloatList</a></div><div class="brief "><p class="paragraph">Builds a new <a href="-float-list/index.html">FloatList</a> by populating a <a href="-mutable-float-list/index.html">MutableFloatList</a> using the given <a href="build-float-list.html">builderAction</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="688173507%2FFunctions%2F-1206441316" anchor-label="buildIntList" id="688173507%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="build-int-list.html"><span>build</span><wbr></wbr><span>Int</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="688173507%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="build-int-list.html"><span class="token function">buildIntList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">builderAction<span class="token operator">: </span><a href="-mutable-int-list/index.html">MutableIntList</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-int-list/index.html">IntList</a></div><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="build-int-list.html"><span class="token function">buildIntList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">initialCapacity<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">builderAction<span class="token operator">: </span><a href="-mutable-int-list/index.html">MutableIntList</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-int-list/index.html">IntList</a></div><div class="brief "><p class="paragraph">Builds a new <a href="-int-list/index.html">IntList</a> by populating a <a href="-mutable-int-list/index.html">MutableIntList</a> using the given <a href="build-int-list.html">builderAction</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1252554017%2FFunctions%2F-1206441316" anchor-label="buildLongList" id="-1252554017%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="build-long-list.html"><span>build</span><wbr></wbr><span>Long</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1252554017%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="build-long-list.html"><span class="token function">buildLongList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">builderAction<span class="token operator">: </span><a href="-mutable-long-list/index.html">MutableLongList</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-long-list/index.html">LongList</a></div><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="build-long-list.html"><span class="token function">buildLongList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">initialCapacity<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">builderAction<span class="token operator">: </span><a href="-mutable-long-list/index.html">MutableLongList</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-long-list/index.html">LongList</a></div><div class="brief "><p class="paragraph">Builds a new <a href="-long-list/index.html">LongList</a> by populating a <a href="-mutable-long-list/index.html">MutableLongList</a> using the given <a href="build-long-list.html">builderAction</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1790730789%2FFunctions%2F-1206441316" anchor-label="DoubleList" id="-1790730789%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-double-list.html"><span>Double</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1790730789%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="-double-list.html"><span class="token function">DoubleList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">size<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">init<span class="token operator">: </span><span class="token punctuation">(</span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-double-list/index.html">DoubleList</a></div><div class="brief "><p class="paragraph">Creates a <a href="-double-list/index.html">DoubleList</a> with the specified size, where each element is calculated by calling the specified <a href="-double-list.html">init</a> function. <a href="-double-list.html">init</a> is called for each list element sequentially starting from the first one. It should return the value for a list element given its index.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="626158489%2FFunctions%2F-1206441316" anchor-label="doubleListOf" id="626158489%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="double-list-of.html"><span>double</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="626158489%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="double-list-of.html"><span class="token function">doubleListOf</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-double-list/index.html">DoubleList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="double-list-of.html"><span class="token function">doubleListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-double-list/index.html">DoubleList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="double-list-of.html"><span class="token function">doubleListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>elements<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-double-list/index.html">DoubleList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="double-list-of.html"><span class="token function">doubleListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-double-list/index.html">DoubleList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="double-list-of.html"><span class="token function">doubleListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter ">element3<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-double-list/index.html">DoubleList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="484711907%2FFunctions%2F-1206441316" anchor-label="emptyDoubleList" id="484711907%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="empty-double-list.html"><span>empty</span><wbr></wbr><span>Double</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="484711907%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="empty-double-list.html"><span class="token function">emptyDoubleList</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-double-list/index.html">DoubleList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1074441746%2FFunctions%2F-1206441316" anchor-label="emptyFloatList" id="-1074441746%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="empty-float-list.html"><span>empty</span><wbr></wbr><span>Float</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1074441746%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="empty-float-list.html"><span class="token function">emptyFloatList</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-float-list/index.html">FloatList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-910258181%2FFunctions%2F-1206441316" anchor-label="emptyIntList" id="-910258181%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="empty-int-list.html"><span>empty</span><wbr></wbr><span>Int</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-910258181%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="empty-int-list.html"><span class="token function">emptyIntList</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-int-list/index.html">IntList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="339249240%2FFunctions%2F-1206441316" anchor-label="emptyLongList" id="339249240%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="empty-long-list.html"><span>empty</span><wbr></wbr><span>Long</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="339249240%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="empty-long-list.html"><span class="token function">emptyLongList</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-long-list/index.html">LongList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1996397997%2FFunctions%2F-1206441316" anchor-label="FloatList" id="-1996397997%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-float-list.html"><span>Float</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1996397997%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="-float-list.html"><span class="token function">FloatList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">size<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">init<span class="token operator">: </span><span class="token punctuation">(</span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-float-list/index.html">FloatList</a></div><div class="brief "><p class="paragraph">Creates a <a href="-float-list/index.html">FloatList</a> with the specified size, where each element is calculated by calling the specified <a href="-float-list.html">init</a> function. <a href="-float-list.html">init</a> is called for each list element sequentially starting from the first one. It should return the value for a list element given its index.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-106966713%2FFunctions%2F-1206441316" anchor-label="floatListOf" id="-106966713%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="float-list-of.html"><span>float</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-106966713%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="float-list-of.html"><span class="token function">floatListOf</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-float-list/index.html">FloatList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="float-list-of.html"><span class="token function">floatListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-float-list/index.html">FloatList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="float-list-of.html"><span class="token function">floatListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>elements<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-float-list/index.html">FloatList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="float-list-of.html"><span class="token function">floatListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-float-list/index.html">FloatList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="float-list-of.html"><span class="token function">floatListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">element3<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-float-list/index.html">FloatList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="624864819%2FFunctions%2F-1206441316" anchor-label="IntList" id="624864819%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-int-list.html"><span>Int</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="624864819%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="-int-list.html"><span class="token function">IntList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">size<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">init<span class="token operator">: </span><span class="token punctuation">(</span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-int-list/index.html">IntList</a></div><div class="brief "><p class="paragraph">Creates a <a href="-int-list/index.html">IntList</a> with the specified size, where each element is calculated by calling the specified <a href="-int-list.html">init</a> function. <a href="-int-list.html">init</a> is called for each list element sequentially starting from the first one. It should return the value for a list element given its index.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="719909191%2FFunctions%2F-1206441316" anchor-label="intListOf" id="719909191%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="int-list-of.html"><span>int</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="719909191%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="int-list-of.html"><span class="token function">intListOf</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-int-list/index.html">IntList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="int-list-of.html"><span class="token function">intListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-int-list/index.html">IntList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="int-list-of.html"><span class="token function">intListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>elements<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-int-list/index.html">IntList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="int-list-of.html"><span class="token function">intListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-int-list/index.html">IntList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="int-list-of.html"><span class="token function">intListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">element3<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-int-list/index.html">IntList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="165696049%2FFunctions%2F-1206441316" anchor-label="LongList" id="165696049%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-long-list.html"><span>Long</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="165696049%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="-long-list.html"><span class="token function">LongList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">size<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">init<span class="token operator">: </span><span class="token punctuation">(</span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-long-list/index.html">LongList</a></div><div class="brief "><p class="paragraph">Creates a <a href="-long-list/index.html">LongList</a> with the specified size, where each element is calculated by calling the specified <a href="-long-list.html">init</a> function. <a href="-long-list.html">init</a> is called for each list element sequentially starting from the first one. It should return the value for a list element given its index.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1900084485%2FFunctions%2F-1206441316" anchor-label="longListOf" id="1900084485%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="long-list-of.html"><span>long</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1900084485%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="long-list-of.html"><span class="token function">longListOf</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-long-list/index.html">LongList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="long-list-of.html"><span class="token function">longListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-long-list/index.html">LongList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="long-list-of.html"><span class="token function">longListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>elements<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-long-list/index.html">LongList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="long-list-of.html"><span class="token function">longListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-long-list/index.html">LongList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="long-list-of.html"><span class="token function">longListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">element3<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-long-list/index.html">LongList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1568474915%2FFunctions%2F-1206441316" anchor-label="MutableDoubleList" id="-1568474915%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mutable-double-list.html"><span>Mutable</span><wbr></wbr><span>Double</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1568474915%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="-mutable-double-list.html"><span class="token function">MutableDoubleList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">size<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">init<span class="token operator">: </span><span class="token punctuation">(</span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-double-list/index.html">MutableDoubleList</a></div><div class="brief "><p class="paragraph">Creates a <a href="-mutable-double-list/index.html">MutableDoubleList</a> with the specified size, where each element is calculated by calling the specified <a href="-mutable-double-list.html">init</a> function. <a href="-mutable-double-list.html">init</a> is called for each list element sequentially starting from the first one. It should return the value for a list element given its index.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-463216453%2FFunctions%2F-1206441316" anchor-label="mutableDoubleListOf" id="-463216453%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="mutable-double-list-of.html"><span>mutable</span><wbr></wbr><span>Double</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-463216453%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="mutable-double-list-of.html"><span class="token function">mutableDoubleListOf</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-double-list/index.html">MutableDoubleList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-double-list-of.html"><span class="token function">mutableDoubleListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-double-list/index.html">MutableDoubleList</a></div><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="mutable-double-list-of.html"><span class="token function">mutableDoubleListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>elements<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-double-list/index.html">MutableDoubleList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-double-list-of.html"><span class="token function">mutableDoubleListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-double-list/index.html">MutableDoubleList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-double-list-of.html"><span class="token function">mutableDoubleListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter ">element3<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-double-list/index.html">MutableDoubleList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1660971563%2FFunctions%2F-1206441316" anchor-label="MutableFloatList" id="-1660971563%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mutable-float-list.html"><span>Mutable</span><wbr></wbr><span>Float</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1660971563%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="-mutable-float-list.html"><span class="token function">MutableFloatList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">size<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">init<span class="token operator">: </span><span class="token punctuation">(</span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-float-list/index.html">MutableFloatList</a></div><div class="brief "><p class="paragraph">Creates a <a href="-mutable-float-list/index.html">MutableFloatList</a> with the specified size, where each element is calculated by calling the specified <a href="-mutable-float-list.html">init</a> function. <a href="-mutable-float-list.html">init</a> is called for each list element sequentially starting from the first one. It should return the value for a list element given its index.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="345973065%2FFunctions%2F-1206441316" anchor-label="mutableFloatListOf" id="345973065%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="mutable-float-list-of.html"><span>mutable</span><wbr></wbr><span>Float</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="345973065%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="mutable-float-list-of.html"><span class="token function">mutableFloatListOf</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-float-list/index.html">MutableFloatList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-float-list-of.html"><span class="token function">mutableFloatListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-float-list/index.html">MutableFloatList</a></div><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="mutable-float-list-of.html"><span class="token function">mutableFloatListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>elements<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-float-list/index.html">MutableFloatList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-float-list-of.html"><span class="token function">mutableFloatListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-float-list/index.html">MutableFloatList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-float-list-of.html"><span class="token function">mutableFloatListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">element3<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-float-list/index.html">MutableFloatList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2144793269%2FFunctions%2F-1206441316" anchor-label="MutableIntList" id="2144793269%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mutable-int-list.html"><span>Mutable</span><wbr></wbr><span>Int</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2144793269%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="-mutable-int-list.html"><span class="token function">MutableIntList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">size<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">init<span class="token operator">: </span><span class="token punctuation">(</span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-int-list/index.html">MutableIntList</a></div><div class="brief "><p class="paragraph">Creates a <a href="-mutable-int-list/index.html">MutableIntList</a> with the specified size, where each element is calculated by calling the specified <a href="-mutable-int-list.html">init</a> function. <a href="-mutable-int-list.html">init</a> is called for each list element sequentially starting from the first one. It should return the value for a list element given its index.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1206958537%2FFunctions%2F-1206441316" anchor-label="mutableIntListOf" id="1206958537%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="mutable-int-list-of.html"><span>mutable</span><wbr></wbr><span>Int</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1206958537%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="mutable-int-list-of.html"><span class="token function">mutableIntListOf</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-int-list/index.html">MutableIntList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-int-list-of.html"><span class="token function">mutableIntListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-int-list/index.html">MutableIntList</a></div><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="mutable-int-list-of.html"><span class="token function">mutableIntListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>elements<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-int-list/index.html">MutableIntList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-int-list-of.html"><span class="token function">mutableIntListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-int-list/index.html">MutableIntList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-int-list-of.html"><span class="token function">mutableIntListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">element3<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-int-list/index.html">MutableIntList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="528055859%2FFunctions%2F-1206441316" anchor-label="MutableLongList" id="528055859%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mutable-long-list.html"><span>Mutable</span><wbr></wbr><span>Long</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="528055859%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="-mutable-long-list.html"><span class="token function">MutableLongList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">size<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">init<span class="token operator">: </span><span class="token punctuation">(</span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-long-list/index.html">MutableLongList</a></div><div class="brief "><p class="paragraph">Creates a <a href="-mutable-long-list/index.html">MutableLongList</a> with the specified size, where each element is calculated by calling the specified <a href="-mutable-long-list.html">init</a> function. <a href="-mutable-long-list.html">init</a> is called for each list element sequentially starting from the first one. It should return the value for a list element given its index.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="630519035%2FFunctions%2F-1206441316" anchor-label="mutableLongListOf" id="630519035%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="mutable-long-list-of.html"><span>mutable</span><wbr></wbr><span>Long</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="630519035%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="mutable-long-list-of.html"><span class="token function">mutableLongListOf</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-long-list/index.html">MutableLongList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-long-list-of.html"><span class="token function">mutableLongListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-long-list/index.html">MutableLongList</a></div><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="mutable-long-list-of.html"><span class="token function">mutableLongListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>elements<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-long-list/index.html">MutableLongList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-long-list-of.html"><span class="token function">mutableLongListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-long-list/index.html">MutableLongList</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="mutable-long-list-of.html"><span class="token function">mutableLongListOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">element1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">element2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">element3<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mutable-long-list/index.html">MutableLongList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-924732312%2FFunctions%2F-1206441316" anchor-label="orEmpty" id="-924732312%2FFunctions%2F-1206441316" data-filterable-set=":kubit/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":kubit/commonMain" data-filterable-set=":kubit/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="or-empty.html"><span>or</span><wbr></wbr><span><span>Empty</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-924732312%2FFunctions%2F-1206441316"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kubit/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-double-list/index.html">DoubleList</a><span class="token operator">?</span><span class="token punctuation">.</span><a href="or-empty.html"><span class="token function">orEmpty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-double-list/index.html">DoubleList</a></div><div class="brief "><p class="paragraph">Returns the <a href="-double-list/index.html">DoubleList</a> itself if it's not null; otherwise returns an empty <a href="-double-list/index.html">DoubleList</a>.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="-float-list/index.html">FloatList</a><span class="token operator">?</span><span class="token punctuation">.</span><a href="or-empty.html"><span class="token function">orEmpty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-float-list/index.html">FloatList</a></div><div class="brief "><p class="paragraph">Returns the <a href="-float-list/index.html">FloatList</a> itself if it's not null; otherwise returns an empty <a href="-float-list/index.html">FloatList</a>.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="-int-list/index.html">IntList</a><span class="token operator">?</span><span class="token punctuation">.</span><a href="or-empty.html"><span class="token function">orEmpty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-int-list/index.html">IntList</a></div><div class="brief "><p class="paragraph">Returns the <a href="-int-list/index.html">IntList</a> itself if it's not null; otherwise returns an empty <a href="-int-list/index.html">IntList</a>.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="-long-list/index.html">LongList</a><span class="token operator">?</span><span class="token punctuation">.</span><a href="or-empty.html"><span class="token function">orEmpty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-long-list/index.html">LongList</a></div><div class="brief "><p class="paragraph">Returns the <a href="-long-list/index.html">LongList</a> itself if it's not null; otherwise returns an empty <a href="-long-list/index.html">LongList</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
