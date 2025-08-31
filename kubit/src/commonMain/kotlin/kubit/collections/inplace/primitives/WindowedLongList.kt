@@ -78,8 +78,8 @@ class WindowedLongList(
     private fun initWindowsArray(): Array<InPlaceLongSubList> {
         var index = 0
         return Array(calculateWindowSize(sourceList.size, windowSize, stepSize, partialWindows)) {
-            val end = index + windowSize - 1
-            InPlaceLongSubList(sourceList, index, end.coerceAtMost(sourceList.lastIndex)).also { index += stepSize }
+            val end = index + windowSize
+            InPlaceLongSubList(sourceList, index, end.coerceAtMost(sourceList.size)).also { index += stepSize }
         }
     }
 

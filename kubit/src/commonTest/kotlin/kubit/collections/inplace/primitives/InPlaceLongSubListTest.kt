@@ -14,7 +14,7 @@ class InPlaceLongSubListTest {
     @Test
     fun basic_access_and_iteration() {
         val list = MutableLongList(5) { (it + 1).toLong() }
-        val sub = InPlaceLongSubList(list, 1, 3)
+        val sub = InPlaceLongSubList(list, 1, 4)
         assertEquals(3, sub.size)
         assertEquals(2L, sub[0])
         assertEquals(3L, sub[1])

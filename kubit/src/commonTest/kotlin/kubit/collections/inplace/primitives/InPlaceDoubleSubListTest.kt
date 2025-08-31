@@ -14,7 +14,7 @@ class InPlaceDoubleSubListTest {
     @Test
     fun basic_access_and_iteration() {
         val list = MutableDoubleList(5) { (it + 1).toDouble() }
-        val sub = InPlaceDoubleSubList(list, 1, 3)
+        val sub = InPlaceDoubleSubList(list, 1, 4)
         assertEquals(3, sub.size)
         assertEquals(2.0, sub[0])
         assertEquals(3.0, sub[1])

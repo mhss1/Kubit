@@ -10,7 +10,7 @@ package kubit.collections.inplace
  */
 fun <T> List<T>.takeInPlace(n: Int): List<T> {
     if (n == 0) return emptyList()
-    return InPlaceSubList(this, 0, (n - 1).coerceAtMost(lastIndex))
+    return InPlaceSubList(this, 0, n.coerceAtMost(size))
 }
 
 /**
@@ -22,7 +22,7 @@ fun <T> List<T>.takeInPlace(n: Int): List<T> {
  */
 fun <T> List<T>.takeLastInPlace(n: Int): List<T> {
     if (n == 0) return emptyList()
-    return InPlaceSubList(this, (size - n).coerceAtLeast(0), lastIndex)
+    return InPlaceSubList(this, (size - n).coerceAtLeast(0), size)
 }
 
 /**
@@ -34,7 +34,7 @@ fun <T> List<T>.takeLastInPlace(n: Int): List<T> {
  */
 fun <T> List<T>.dropInPlace(n: Int): List<T> {
     if (n > size) return emptyList()
-    return InPlaceSubList(this, n, lastIndex)
+    return InPlaceSubList(this, n, size)
 }
 
 /**
@@ -46,5 +46,5 @@ fun <T> List<T>.dropInPlace(n: Int): List<T> {
  */
 fun <T> List<T>.dropLastInPlace(n: Int): List<T> {
     if (n > size) return emptyList()
-    return InPlaceSubList(this, 0, lastIndex - n)
+    return InPlaceSubList(this, 0, size - n)
 }

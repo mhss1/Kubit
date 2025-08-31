@@ -14,7 +14,7 @@ class InPlaceIntSubListTest {
     @Test
     fun basic_access_and_iteration() {
         val list = MutableIntList(5) { (it + 1).toInt() }
-        val sub = InPlaceIntSubList(list, 1, 3)
+        val sub = InPlaceIntSubList(list, 1, 4)
         assertEquals(3, sub.size)
         assertEquals(2, sub[0])
         assertEquals(3, sub[1])

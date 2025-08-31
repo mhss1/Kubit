@@ -78,8 +78,8 @@ class WindowedFloatList(
     private fun initWindowsArray(): Array<InPlaceFloatSubList> {
         var index = 0
         return Array(calculateWindowSize(sourceList.size, windowSize, stepSize, partialWindows)) {
-            val end = index + windowSize - 1
-            InPlaceFloatSubList(sourceList, index, end.coerceAtMost(sourceList.lastIndex)).also { index += stepSize }
+            val end = index + windowSize
+            InPlaceFloatSubList(sourceList, index, end.coerceAtMost(sourceList.size)).also { index += stepSize }
         }
     }
 

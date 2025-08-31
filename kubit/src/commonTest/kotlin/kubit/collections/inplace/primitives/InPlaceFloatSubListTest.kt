@@ -14,7 +14,7 @@ class InPlaceFloatSubListTest {
     @Test
     fun basic_access_and_iteration() {
         val list = MutableFloatList(5) { (it + 1).toFloat() }
-        val sub = InPlaceFloatSubList(list, 1, 3)
+        val sub = InPlaceFloatSubList(list, 1, 4)
         assertEquals(3, sub.size)
         assertEquals(2f, sub[0])
         assertEquals(3f, sub[1])

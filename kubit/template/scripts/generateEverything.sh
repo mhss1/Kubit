@@ -62,4 +62,7 @@ echo ""
 "${scriptDir}/inplace/generateWindowedPrimitiveListTest.sh"
 "${scriptDir}/inplace/generatePrimitiveWindowedChunkedTest.sh"
 
+# InPlace primitive extensions (windowed + chunked ext)
+"${scriptDir}/inplace/generatePrimitiveInPlaceExt.sh"
+
 

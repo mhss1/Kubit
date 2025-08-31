@@ -1,6 +1,7 @@
 package kubit.collections.inplace.primitives
 
 import kubit.collections.list.*
+import kotlin.math.min
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 // DO NOT MAKE CHANGES to this kotlin file.
@@ -9,12 +10,12 @@ import kubit.collections.list.*
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 /**
- * Returns a list of windows with the given [windowSize] sliding with the given [step].
- * Each window is a view into the original list. Changes in the original list will be reflected in the windows.
+ * Returns a WindowedIntList with the given windowSize sliding by step.
+ * Each window is a view into the original list.
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  * @return A [WindowedIntList] containing the windows.
  */
@@ -27,7 +28,7 @@ fun IntList.windowedInPlace(windowSize: Int, step: Int = 1, partialWindows: Bool
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Must be greater than 0. Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @param action The function to be executed for each window.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  */
@@ -42,14 +43,14 @@ inline fun IntList.forEachWindow(
     require(step > 0) { "Step must be greater than 0" }
     if (size < windowSize && !partialWindows) return
 
-    val current = InPlaceIntSubList(this, 0, kotlin.math.min(windowSize - 1, lastIndex))
+    val current = InPlaceIntSubList(this, 0, min(windowSize, size))
 
     while (current.start < size) {
         action(current)
         current.start += step
-        val newEnd = current.start + windowSize - 1
-        if (newEnd >= size && !partialWindows) break
-        current.end = newEnd.coerceAtMost(lastIndex)
+        val newEnd = current.start + windowSize
+        if (newEnd > size && !partialWindows) break
+        current.end = newEnd.coerceAtMost(size)
     }
 }
 
@@ -58,7 +59,7 @@ inline fun IntList.forEachWindow(
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Must be greater than 0, Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @param action The function to be executed for each window and its index.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  */
@@ -75,12 +76,12 @@ inline fun IntList.forEachWindowIndexed(
 }
 
 /**
- * Returns a list of windows with the given [windowSize] sliding with the given [step].
- * Each window is a view into the original list. Changes in the original list will be reflected in the windows.
+ * Returns a WindowedLongList with the given windowSize sliding by step.
+ * Each window is a view into the original list.
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  * @return A [WindowedLongList] containing the windows.
  */
@@ -93,7 +94,7 @@ fun LongList.windowedInPlace(windowSize: Int, step: Int = 1, partialWindows: Boo
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Must be greater than 0. Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @param action The function to be executed for each window.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  */
@@ -108,14 +109,14 @@ inline fun LongList.forEachWindow(
     require(step > 0) { "Step must be greater than 0" }
     if (size < windowSize && !partialWindows) return
 
-    val current = InPlaceLongSubList(this, 0, kotlin.math.min(windowSize - 1, lastIndex))
+    val current = InPlaceLongSubList(this, 0, min(windowSize, size))
 
     while (current.start < size) {
         action(current)
         current.start += step
-        val newEnd = current.start + windowSize - 1
-        if (newEnd >= size && !partialWindows) break
-        current.end = newEnd.coerceAtMost(lastIndex)
+        val newEnd = current.start + windowSize
+        if (newEnd > size && !partialWindows) break
+        current.end = newEnd.coerceAtMost(size)
     }
 }
 
@@ -124,7 +125,7 @@ inline fun LongList.forEachWindow(
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Must be greater than 0, Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @param action The function to be executed for each window and its index.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  */
@@ -141,12 +142,12 @@ inline fun LongList.forEachWindowIndexed(
 }
 
 /**
- * Returns a list of windows with the given [windowSize] sliding with the given [step].
- * Each window is a view into the original list. Changes in the original list will be reflected in the windows.
+ * Returns a WindowedFloatList with the given windowSize sliding by step.
+ * Each window is a view into the original list.
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  * @return A [WindowedFloatList] containing the windows.
  */
@@ -159,7 +160,7 @@ fun FloatList.windowedInPlace(windowSize: Int, step: Int = 1, partialWindows: Bo
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Must be greater than 0. Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @param action The function to be executed for each window.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  */
@@ -174,14 +175,14 @@ inline fun FloatList.forEachWindow(
     require(step > 0) { "Step must be greater than 0" }
     if (size < windowSize && !partialWindows) return
 
-    val current = InPlaceFloatSubList(this, 0, kotlin.math.min(windowSize - 1, lastIndex))
+    val current = InPlaceFloatSubList(this, 0, min(windowSize, size))
 
     while (current.start < size) {
         action(current)
         current.start += step
-        val newEnd = current.start + windowSize - 1
-        if (newEnd >= size && !partialWindows) break
-        current.end = newEnd.coerceAtMost(lastIndex)
+        val newEnd = current.start + windowSize
+        if (newEnd > size && !partialWindows) break
+        current.end = newEnd.coerceAtMost(size)
     }
 }
 
@@ -190,7 +191,7 @@ inline fun FloatList.forEachWindow(
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Must be greater than 0, Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @param action The function to be executed for each window and its index.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  */
@@ -207,12 +208,12 @@ inline fun FloatList.forEachWindowIndexed(
 }
 
 /**
- * Returns a list of windows with the given [windowSize] sliding with the given [step].
- * Each window is a view into the original list. Changes in the original list will be reflected in the windows.
+ * Returns a WindowedDoubleList with the given windowSize sliding by step.
+ * Each window is a view into the original list.
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  * @return A [WindowedDoubleList] containing the windows.
  */
@@ -225,7 +226,7 @@ fun DoubleList.windowedInPlace(windowSize: Int, step: Int = 1, partialWindows: B
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Must be greater than 0. Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @param action The function to be executed for each window.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  */
@@ -240,14 +241,14 @@ inline fun DoubleList.forEachWindow(
     require(step > 0) { "Step must be greater than 0" }
     if (size < windowSize && !partialWindows) return
 
-    val current = InPlaceDoubleSubList(this, 0, kotlin.math.min(windowSize - 1, lastIndex))
+    val current = InPlaceDoubleSubList(this, 0, min(windowSize, size))
 
     while (current.start < size) {
         action(current)
         current.start += step
-        val newEnd = current.start + windowSize - 1
-        if (newEnd >= size && !partialWindows) break
-        current.end = newEnd.coerceAtMost(lastIndex)
+        val newEnd = current.start + windowSize
+        if (newEnd > size && !partialWindows) break
+        current.end = newEnd.coerceAtMost(size)
     }
 }
 
@@ -256,7 +257,7 @@ inline fun DoubleList.forEachWindow(
  *
  * @param windowSize The desired size of each window. Must be greater than 0.
  * @param step The step size between consecutive windows. Must be greater than 0, Defaults to 1.
- * @param partialWindows Whether or not to include partial windows at the end of the list if any. Defaults to .
+ * @param partialWindows Whether to include partial windows at the end. Defaults to false.
  * @param action The function to be executed for each window and its index.
  * @throws IllegalArgumentException if windowSize or step is less than or equal to 0.
  */
