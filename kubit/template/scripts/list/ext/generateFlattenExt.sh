@@ -43,7 +43,7 @@ for primitive in "${primitives[@]}"; do
 inline fun List<List<$primitive>>.flatten(): ${primitive}List {
     val size = sumOf { it.size }
     val result = Mutable${primitive}List(size)
-    fastForEach { list ->
+    forEach { list ->
         result.addAll(list)
     }
     return result
@@ -56,7 +56,7 @@ inline fun List<List<$primitive>>.flatten(): ${primitive}List {
 inline fun List<${primitive}List>.flatten(): ${primitive}List {
     val size = sumOf { it.size }
     val result = Mutable${primitive}List(size)
-    fastForEach { list ->
+    forEach { list ->
         result.addAll(list)
     }
     return result

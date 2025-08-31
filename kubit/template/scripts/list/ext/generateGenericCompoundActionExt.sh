@@ -31,8 +31,8 @@ cat >> "$targetFile" << EOF
  * Iterates over each element in all nested lists and applies the given [action].
  */
 fun <T> List<List<T>>.forEachFlattened(action: (T) -> Unit) {
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             action(item)
         }
     }
@@ -43,8 +43,8 @@ fun <T> List<List<T>>.forEachFlattened(action: (T) -> Unit) {
  */
 fun <T> List<List<T>>.filterFlattened(predicate: (T) -> Boolean): List<T> {
     val result = mutableListOf<T>()
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             if (predicate(item)) result.add(item)
         }
     }
@@ -58,8 +58,8 @@ fun <T> List<List<T>>.filterFlattened(predicate: (T) -> Boolean): List<T> {
 fun <T, E> List<List<T>>.mapFlattened(transform: (T) -> E): List<E> {
     val totalSize = sumOf { it.size }
     val result = ArrayList<E>(totalSize)
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             result.add(transform(item))
         }
     }
@@ -78,8 +78,8 @@ cat >> "$targetFile" << EOF
 fun <T> List<List<T>>.mapFlattened(transform: (T) -> $primitive): ${primitive}List {
     val totalSize = sumOf { it.size }
     val result = Mutable${primitive}List(totalSize)
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             result.add(transform(item))
         }
     }
@@ -91,8 +91,8 @@ fun <T> List<List<T>>.mapFlattened(transform: (T) -> $primitive): ${primitive}Li
  */
 fun List<List<$primitive>>.filterFlattened(predicate: ($primitive) -> Boolean): ${primitive}List {
     val result = Mutable${primitive}List()
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             if (predicate(item)) result.add(item)
         }
     }
@@ -108,8 +108,8 @@ cat >> "$targetFile" << EOF
  * Finds the first element in the nested lists that matches [predicate], or returns null if none found (generic version).
  */
 fun <T> List<List<T>>.findFlattened(predicate: (T) -> Boolean): T? {
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             if (predicate(item)) return item
         }
     }

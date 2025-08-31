@@ -46,7 +46,7 @@ for primitive in "${primitives[@]}"; do
 inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> List<$primitive>): ${primitive}List {
     val size = if (computeSize) sumOf { transform(it).size } else 16
     val result = Mutable${primitive}List(size)
-    fastForEach { element ->
+    forEach { element ->
         result.addAll(transform(element))
     }
     return result
@@ -62,7 +62,7 @@ inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> L
 inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> ${primitive}List): ${primitive}List {
     val size = if (computeSize) sumOf { transform(it).size } else 16
     val result = Mutable${primitive}List(size)
-    fastForEach { element ->
+    forEach { element ->
         result.addAll(transform(element))
     }
     return result

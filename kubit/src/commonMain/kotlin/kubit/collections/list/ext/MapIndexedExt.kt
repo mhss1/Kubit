@@ -14,7 +14,7 @@ import kubit.collections.list.*
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.mapIndexed(transform: (Int, T) -> Int): IntList {
     return MutableIntList(size).also { result ->
-        fastForEachIndexed { index, element ->
+        forEachIndexed { index, element ->
             result.content[result._size++] = transform(index, element)
         }
     }
@@ -26,7 +26,7 @@ inline fun <T> List<T>.mapIndexed(transform: (Int, T) -> Int): IntList {
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.mapIndexed(transform: (Int, T) -> Long): LongList {
     return MutableLongList(size).also { result ->
-        fastForEachIndexed { index, element ->
+        forEachIndexed { index, element ->
             result.content[result._size++] = transform(index, element)
         }
     }
@@ -38,7 +38,7 @@ inline fun <T> List<T>.mapIndexed(transform: (Int, T) -> Long): LongList {
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.mapIndexed(transform: (Int, T) -> Float): FloatList {
     return MutableFloatList(size).also { result ->
-        fastForEachIndexed { index, element ->
+        forEachIndexed { index, element ->
             result.content[result._size++] = transform(index, element)
         }
     }
@@ -50,7 +50,7 @@ inline fun <T> List<T>.mapIndexed(transform: (Int, T) -> Float): FloatList {
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.mapIndexed(transform: (Int, T) -> Double): DoubleList {
     return MutableDoubleList(size).also { result ->
-        fastForEachIndexed { index, element ->
+        forEachIndexed { index, element ->
             result.content[result._size++] = transform(index, element)
         }
     }

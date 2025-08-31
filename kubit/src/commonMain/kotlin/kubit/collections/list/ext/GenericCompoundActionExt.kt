@@ -12,8 +12,8 @@ import kubit.collections.list.*
  * Iterates over each element in all nested lists and applies the given [action].
  */
 fun <T> List<List<T>>.forEachFlattened(action: (T) -> Unit) {
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             action(item)
         }
     }
@@ -24,8 +24,8 @@ fun <T> List<List<T>>.forEachFlattened(action: (T) -> Unit) {
  */
 fun <T> List<List<T>>.filterFlattened(predicate: (T) -> Boolean): List<T> {
     val result = mutableListOf<T>()
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             if (predicate(item)) result.add(item)
         }
     }
@@ -39,8 +39,8 @@ fun <T> List<List<T>>.filterFlattened(predicate: (T) -> Boolean): List<T> {
 fun <T, E> List<List<T>>.mapFlattened(transform: (T) -> E): List<E> {
     val totalSize = sumOf { it.size }
     val result = ArrayList<E>(totalSize)
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             result.add(transform(item))
         }
     }
@@ -54,8 +54,8 @@ fun <T, E> List<List<T>>.mapFlattened(transform: (T) -> E): List<E> {
 fun <T> List<List<T>>.mapFlattened(transform: (T) -> Int): IntList {
     val totalSize = sumOf { it.size }
     val result = MutableIntList(totalSize)
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             result.add(transform(item))
         }
     }
@@ -67,8 +67,8 @@ fun <T> List<List<T>>.mapFlattened(transform: (T) -> Int): IntList {
  */
 fun List<List<Int>>.filterFlattened(predicate: (Int) -> Boolean): IntList {
     val result = MutableIntList()
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             if (predicate(item)) result.add(item)
         }
     }
@@ -82,8 +82,8 @@ fun List<List<Int>>.filterFlattened(predicate: (Int) -> Boolean): IntList {
 fun <T> List<List<T>>.mapFlattened(transform: (T) -> Long): LongList {
     val totalSize = sumOf { it.size }
     val result = MutableLongList(totalSize)
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             result.add(transform(item))
         }
     }
@@ -95,8 +95,8 @@ fun <T> List<List<T>>.mapFlattened(transform: (T) -> Long): LongList {
  */
 fun List<List<Long>>.filterFlattened(predicate: (Long) -> Boolean): LongList {
     val result = MutableLongList()
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             if (predicate(item)) result.add(item)
         }
     }
@@ -110,8 +110,8 @@ fun List<List<Long>>.filterFlattened(predicate: (Long) -> Boolean): LongList {
 fun <T> List<List<T>>.mapFlattened(transform: (T) -> Float): FloatList {
     val totalSize = sumOf { it.size }
     val result = MutableFloatList(totalSize)
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             result.add(transform(item))
         }
     }
@@ -123,8 +123,8 @@ fun <T> List<List<T>>.mapFlattened(transform: (T) -> Float): FloatList {
  */
 fun List<List<Float>>.filterFlattened(predicate: (Float) -> Boolean): FloatList {
     val result = MutableFloatList()
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             if (predicate(item)) result.add(item)
         }
     }
@@ -138,8 +138,8 @@ fun List<List<Float>>.filterFlattened(predicate: (Float) -> Boolean): FloatList 
 fun <T> List<List<T>>.mapFlattened(transform: (T) -> Double): DoubleList {
     val totalSize = sumOf { it.size }
     val result = MutableDoubleList(totalSize)
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             result.add(transform(item))
         }
     }
@@ -151,8 +151,8 @@ fun <T> List<List<T>>.mapFlattened(transform: (T) -> Double): DoubleList {
  */
 fun List<List<Double>>.filterFlattened(predicate: (Double) -> Boolean): DoubleList {
     val result = MutableDoubleList()
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             if (predicate(item)) result.add(item)
         }
     }
@@ -163,8 +163,8 @@ fun List<List<Double>>.filterFlattened(predicate: (Double) -> Boolean): DoubleLi
  * Finds the first element in the nested lists that matches [predicate], or returns null if none found (generic version).
  */
 fun <T> List<List<T>>.findFlattened(predicate: (T) -> Boolean): T? {
-    fastForEach { list ->
-        list.fastForEach { item ->
+    forEach { list ->
+        list.forEach { item ->
             if (predicate(item)) return item
         }
     }

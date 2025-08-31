@@ -14,7 +14,7 @@ inline fun <T> List<T>.atLeast(n: Int, predicate: (T) -> Boolean): Boolean {
     if (n < 0) throwIllegalArgumentException("n must be >= 0")
     if (n == 0) return true
     var count = 0
-    fastForEach { element ->
+    forEach { element ->
         if (predicate(element) && ++count >= n) {
             return true
         }
@@ -33,7 +33,7 @@ inline fun <T> List<T>.atLeast(n: Int, predicate: (T) -> Boolean): Boolean {
 inline fun <T> List<T>.atMost(n: Int, predicate: (T) -> Boolean): Boolean {
     if (n < 0) throwIllegalArgumentException("n must be >= 0")
     var count = 0
-    fastForEach { element ->
+    forEach { element ->
         if (predicate(element) && ++count > n) {
             return false
         }

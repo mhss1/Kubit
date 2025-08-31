@@ -39,7 +39,7 @@ for primitive in "${primitives[@]}"; do
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.map(transform: (T) -> $primitive): ${primitive}List {
     return Mutable${primitive}List(size).also { result ->
-        fastForEach { element ->
+        forEach { element ->
             result.content[result._size++] = transform(element)
         }
     }
@@ -51,7 +51,7 @@ inline fun <T> List<T>.map(transform: (T) -> $primitive): ${primitive}List {
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.mapNotNull(transform: (T) -> $primitive?): ${primitive}List {
     val result = Mutable${primitive}List()
-    fastForEach { element ->
+    forEach { element ->
         transform(element)?.let { result.add(it) }
     }
     return result
