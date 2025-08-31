@@ -59,7 +59,7 @@ class StringExtTest {
     @Test
     fun `forEachSplit empty string`() {
         val input = ""
-        val expected = listOf("")
+        val expected = emptyList<String>()
         val actual = mutableListOf<String>()
         input.forEachSplit(',') { actual.add(it.toString()) }
         assertEquals(expected, actual)
