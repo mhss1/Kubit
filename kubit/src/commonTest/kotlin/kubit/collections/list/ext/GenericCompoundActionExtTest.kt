@@ -38,11 +38,11 @@ class GenericCompoundActionExtTest {
     @Test
     fun `mapFlattened with generic lists`() {
         val src = listOf(
-            listOf("a", "b"),
-            listOf("c")
+            listOf("a", "ab"),
+            listOf("ccc")
         )
-        val result = src.mapFlattened { it.length }
-        assertEquals(intListOf(1, 1, 1), result)
+        val result = src.mapFlattened { it.length.toString() }
+        assertEquals(listOf("1", "2", "3"), result)
     }
 
     @Test
