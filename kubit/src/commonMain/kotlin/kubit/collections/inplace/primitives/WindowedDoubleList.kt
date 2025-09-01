@@ -78,8 +78,8 @@ class WindowedDoubleList(
     private fun initWindowsArray(): Array<InPlaceDoubleSubList> {
         var index = 0
         return Array(calculateWindowSize(sourceList.size, windowSize, stepSize, partialWindows)) {
-            val end = index + windowSize - 1
-            InPlaceDoubleSubList(sourceList, index, end.coerceAtMost(sourceList.lastIndex)).also { index += stepSize }
+            val end = index + windowSize
+            InPlaceDoubleSubList(sourceList, index, end.coerceAtMost(sourceList.size)).also { index += stepSize }
         }
     }
 

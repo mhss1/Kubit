@@ -217,8 +217,6 @@ $dokka.location:kubit.collections.inplace/WindowedList/size/#/PointingToDeclarat
 $dokka.location:kubit.collections.list.ext////PointingToDeclaration/-kubit/kubit.collections.list.ext/index.html
 $dokka.location:kubit.collections.list.ext//atLeast/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Boolean]/PointingToDeclaration/-kubit/kubit.collections.list.ext/at-least.html
 $dokka.location:kubit.collections.list.ext//atMost/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Boolean]/PointingToDeclaration/-kubit/kubit.collections.list.ext/at-most.html
-$dokka.location:kubit.collections.list.ext//fastForEach/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/-kubit/kubit.collections.list.ext/fast-for-each.html
-$dokka.location:kubit.collections.list.ext//fastForEachIndexed/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function2[kotlin.Int,TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/-kubit/kubit.collections.list.ext/fast-for-each-indexed.html
 $dokka.location:kubit.collections.list.ext//filter/kotlin.collections.List[kotlin.Double]#kotlin.Function1[kotlin.Double,kotlin.Boolean]/PointingToDeclaration/-kubit/kubit.collections.list.ext/filter.html
 $dokka.location:kubit.collections.list.ext//filter/kotlin.collections.List[kotlin.Float]#kotlin.Function1[kotlin.Float,kotlin.Boolean]/PointingToDeclaration/-kubit/kubit.collections.list.ext/filter.html
 $dokka.location:kubit.collections.list.ext//filter/kotlin.collections.List[kotlin.Int]#kotlin.Function1[kotlin.Int,kotlin.Boolean]/PointingToDeclaration/-kubit/kubit.collections.list.ext/filter.html
@@ -769,8 +767,13 @@ $dokka.location:kubit.collections.range//fastAverage/kotlin.ranges.IntRange#/Poi
 $dokka.location:kubit.collections.range//fastSum/kotlin.ranges.IntRange#/PointingToDeclaration/-kubit/kubit.collections.range/fast-sum.html
 $dokka.location:kubit.collections.range//median/kotlin.ranges.IntRange#/PointingToDeclaration/-kubit/kubit.collections.range/median.html
 $dokka.location:kubit.string////PointingToDeclaration/-kubit/kubit.string/index.html
-$dokka.location:kubit.string//countWords/kotlin.String#kotlin.Function1[kotlin.Char,kotlin.Boolean]/PointingToDeclaration/-kubit/kubit.string/count-words.html
-$dokka.location:kubit.string//forEachSplit/kotlin.String#kotlin.Char#kotlin.Function1[kotlin.CharSequence,kotlin.Unit]/PointingToDeclaration/-kubit/kubit.string/for-each-split.html
+$dokka.location:kubit.string//countWords/kotlin.CharSequence#kotlin.Function1[kotlin.Char,kotlin.Boolean]/PointingToDeclaration/-kubit/kubit.string/count-words.html
+$dokka.location:kubit.string//forEachSplit/kotlin.CharSequence#kotlin.Char#kotlin.Function1[kotlin.CharSequence,kotlin.Unit]/PointingToDeclaration/-kubit/kubit.string/for-each-split.html
+$dokka.location:kubit.string/InPlaceCharSequence///PointingToDeclaration/-kubit/kubit.string/-in-place-char-sequence/index.html
+$dokka.location:kubit.string/InPlaceCharSequence/get/#kotlin.Int/PointingToDeclaration/-kubit/kubit.string/-in-place-char-sequence/get.html
+$dokka.location:kubit.string/InPlaceCharSequence/length/#/PointingToDeclaration/-kubit/kubit.string/-in-place-char-sequence/length.html
+$dokka.location:kubit.string/InPlaceCharSequence/subSequence/#kotlin.Int#kotlin.Int/PointingToDeclaration/-kubit/kubit.string/-in-place-char-sequence/sub-sequence.html
+$dokka.location:kubit.string/InPlaceCharSequence/toString/#/PointingToDeclaration/-kubit/kubit.string/-in-place-char-sequence/to-string.html
 kubit.collections.array
 kubit.collections.inplace
 kubit.collections.inplace.primitives

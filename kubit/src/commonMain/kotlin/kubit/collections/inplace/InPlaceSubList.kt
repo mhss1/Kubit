@@ -19,14 +19,14 @@ class InPlaceSubList<T> @PublishedApi internal constructor(
      */
     @JvmField @PublishedApi internal var start: Int,
     /**
-     * The end index (inclusive) within the [sourceList] at which this sublist ends.
+     * The end index (exclusive) within the [sourceList] at which this sublist ends.
      */
     @JvmField @PublishedApi internal var end: Int
 ) : AbstractList<T>() {
 
     init {
         require(start >= 0) { "Start index must be greater than or equal to 0" }
-        require(end < sourceList.size) { "End index must be less than the size of the source list" }
+        require(end <= sourceList.size) { "End index must be less than or equal to the size of the source list" }
         require(start <= end) { "Start index must be less than or equal to end index" }
     }
 
@@ -34,7 +34,7 @@ class InPlaceSubList<T> @PublishedApi internal constructor(
      * Returns the size of this sublist.
      */
     override val size: Int
-        get() = end - start + 1
+        get() = end - start
 
     /**
      * Returns the element at the specified [index] in this sublist.
@@ -56,7 +56,7 @@ class InPlaceSubList<T> @PublishedApi internal constructor(
      * @param action The function to be executed
      */
     inline fun fastForEach(action: (T) -> Unit) {
-        for (i in start..end) {
+        for (i in start until end) {
             action(sourceList[i])
         }
     }
@@ -70,7 +70,7 @@ class InPlaceSubList<T> @PublishedApi internal constructor(
      * @param action The function to be executed
      */
     inline fun fastForEachIndexed(action: (index: Int, T) -> Unit) {
-        for (i in start..end) {
+        for (i in start until end) {
             action(i - start, sourceList[i])
         }
     }

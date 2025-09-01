@@ -38,7 +38,7 @@ for primitive in "${primitives[@]}"; do
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.mapIndexed(transform: (Int, T) -> $primitive): ${primitive}List {
     return Mutable${primitive}List(size).also { result ->
-        fastForEachIndexed { index, element ->
+        forEachIndexed { index, element ->
             result.content[result._size++] = transform(index, element)
         }
     }

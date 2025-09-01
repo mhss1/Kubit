@@ -17,7 +17,7 @@ import kotlin.jvm.JvmName
 inline fun List<List<Int>>.flatten(): IntList {
     val size = sumOf { it.size }
     val result = MutableIntList(size)
-    fastForEach { list ->
+    forEach { list ->
         result.addAll(list)
     }
     return result
@@ -30,7 +30,7 @@ inline fun List<List<Int>>.flatten(): IntList {
 inline fun List<IntList>.flatten(): IntList {
     val size = sumOf { it.size }
     val result = MutableIntList(size)
-    fastForEach { list ->
+    forEach { list ->
         result.addAll(list)
     }
     return result
@@ -44,7 +44,7 @@ inline fun List<IntList>.flatten(): IntList {
 inline fun List<List<Long>>.flatten(): LongList {
     val size = sumOf { it.size }
     val result = MutableLongList(size)
-    fastForEach { list ->
+    forEach { list ->
         result.addAll(list)
     }
     return result
@@ -57,7 +57,7 @@ inline fun List<List<Long>>.flatten(): LongList {
 inline fun List<LongList>.flatten(): LongList {
     val size = sumOf { it.size }
     val result = MutableLongList(size)
-    fastForEach { list ->
+    forEach { list ->
         result.addAll(list)
     }
     return result
@@ -71,7 +71,7 @@ inline fun List<LongList>.flatten(): LongList {
 inline fun List<List<Float>>.flatten(): FloatList {
     val size = sumOf { it.size }
     val result = MutableFloatList(size)
-    fastForEach { list ->
+    forEach { list ->
         result.addAll(list)
     }
     return result
@@ -84,7 +84,7 @@ inline fun List<List<Float>>.flatten(): FloatList {
 inline fun List<FloatList>.flatten(): FloatList {
     val size = sumOf { it.size }
     val result = MutableFloatList(size)
-    fastForEach { list ->
+    forEach { list ->
         result.addAll(list)
     }
     return result
@@ -98,7 +98,7 @@ inline fun List<FloatList>.flatten(): FloatList {
 inline fun List<List<Double>>.flatten(): DoubleList {
     val size = sumOf { it.size }
     val result = MutableDoubleList(size)
-    fastForEach { list ->
+    forEach { list ->
         result.addAll(list)
     }
     return result
@@ -111,7 +111,7 @@ inline fun List<List<Double>>.flatten(): DoubleList {
 inline fun List<DoubleList>.flatten(): DoubleList {
     val size = sumOf { it.size }
     val result = MutableDoubleList(size)
-    fastForEach { list ->
+    forEach { list ->
         result.addAll(list)
     }
     return result

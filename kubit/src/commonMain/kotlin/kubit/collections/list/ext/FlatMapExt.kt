@@ -20,7 +20,7 @@ import kotlin.jvm.JvmName
 inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> List<Int>): IntList {
     val size = if (computeSize) sumOf { transform(it).size } else 16
     val result = MutableIntList(size)
-    fastForEach { element ->
+    forEach { element ->
         result.addAll(transform(element))
     }
     return result
@@ -36,7 +36,7 @@ inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> L
 inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> IntList): IntList {
     val size = if (computeSize) sumOf { transform(it).size } else 16
     val result = MutableIntList(size)
-    fastForEach { element ->
+    forEach { element ->
         result.addAll(transform(element))
     }
     return result
@@ -53,7 +53,7 @@ inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> I
 inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> List<Long>): LongList {
     val size = if (computeSize) sumOf { transform(it).size } else 16
     val result = MutableLongList(size)
-    fastForEach { element ->
+    forEach { element ->
         result.addAll(transform(element))
     }
     return result
@@ -69,7 +69,7 @@ inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> L
 inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> LongList): LongList {
     val size = if (computeSize) sumOf { transform(it).size } else 16
     val result = MutableLongList(size)
-    fastForEach { element ->
+    forEach { element ->
         result.addAll(transform(element))
     }
     return result
@@ -86,7 +86,7 @@ inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> L
 inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> List<Float>): FloatList {
     val size = if (computeSize) sumOf { transform(it).size } else 16
     val result = MutableFloatList(size)
-    fastForEach { element ->
+    forEach { element ->
         result.addAll(transform(element))
     }
     return result
@@ -102,7 +102,7 @@ inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> L
 inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> FloatList): FloatList {
     val size = if (computeSize) sumOf { transform(it).size } else 16
     val result = MutableFloatList(size)
-    fastForEach { element ->
+    forEach { element ->
         result.addAll(transform(element))
     }
     return result
@@ -119,7 +119,7 @@ inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> F
 inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> List<Double>): DoubleList {
     val size = if (computeSize) sumOf { transform(it).size } else 16
     val result = MutableDoubleList(size)
-    fastForEach { element ->
+    forEach { element ->
         result.addAll(transform(element))
     }
     return result
@@ -135,7 +135,7 @@ inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> L
 inline fun <T> List<T>.flatMap(computeSize: Boolean = false, transform: (T) -> DoubleList): DoubleList {
     val size = if (computeSize) sumOf { transform(it).size } else 16
     val result = MutableDoubleList(size)
-    fastForEach { element ->
+    forEach { element ->
         result.addAll(transform(element))
     }
     return result

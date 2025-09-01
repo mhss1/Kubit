@@ -34,14 +34,14 @@ inline fun <T> List<T>.forEachWindow(
     require(step > 0) { "Step must be greater than 0" }
     if (size < windowSize && !partialWindows) return
 
-    val current = InPlaceSubList(this, 0, minOf(windowSize - 1, lastIndex))
+    val current = InPlaceSubList(this, 0, minOf(windowSize, size))
 
     while (current.start < size) {
         action(current)
         current.start += step
-        val newEnd = current.start + windowSize - 1
-        if (newEnd >= size && !partialWindows) break
-        current.end = newEnd.coerceAtMost(lastIndex)
+        val newEnd = current.start + windowSize
+        if (newEnd > size && !partialWindows) break
+        current.end = newEnd.coerceAtMost(size)
     }
 }
 

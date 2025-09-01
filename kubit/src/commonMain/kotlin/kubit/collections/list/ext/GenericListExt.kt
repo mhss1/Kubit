@@ -9,29 +9,11 @@ import kubit.collections.list.*
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 /**
- * A fast forEach implementation that uses a for-loop for RandomAccess Lists
- * and falls back to forEach for other List types.
- */
-inline fun <T> List<T>.fastForEach(action: (T) -> Unit) {
-    if (this is RandomAccess) for (i in indices) action(this[i])
-    else forEach(action)
-}
-
-/**
- * A fast forEachIndexed implementation that uses a for-loop for RandomAccess Lists
- * and falls back to forEachIndexed for other List types.
- */
-inline fun <T> List<T>.fastForEachIndexed(action: (Int, T) -> Unit) {
-    if (this is RandomAccess) for (i in indices) action(i, this[i])
-    else forEachIndexed(action)
-}
-
-/**
  * Returns a IntList containing only elements matching the given predicate.
  */
 inline fun List<Int>.filter(predicate: (Int) -> Boolean): IntList {
     val result = MutableIntList()
-    fastForEach { element ->
+    forEach { element ->
         if (predicate(element)) result.add(element)
     }
     return result
@@ -42,7 +24,7 @@ inline fun List<Int>.filter(predicate: (Int) -> Boolean): IntList {
  */
 inline fun List<Int>.filterNot(predicate: (Int) -> Boolean): IntList {
     val result = MutableIntList()
-    fastForEach { element ->
+    forEach { element ->
         if (!predicate(element)) result.add(element)
     }
     return result
@@ -53,7 +35,7 @@ inline fun List<Int>.filterNot(predicate: (Int) -> Boolean): IntList {
  */
 fun List<Int?>.filterNotNull(): IntList {
     val result = MutableIntList()
-    fastForEach { element ->
+    forEach { element ->
         element?.let { result.add(it) }
     }
     return result
@@ -64,7 +46,7 @@ fun List<Int?>.filterNotNull(): IntList {
  */
 inline fun List<Long>.filter(predicate: (Long) -> Boolean): LongList {
     val result = MutableLongList()
-    fastForEach { element ->
+    forEach { element ->
         if (predicate(element)) result.add(element)
     }
     return result
@@ -75,7 +57,7 @@ inline fun List<Long>.filter(predicate: (Long) -> Boolean): LongList {
  */
 inline fun List<Long>.filterNot(predicate: (Long) -> Boolean): LongList {
     val result = MutableLongList()
-    fastForEach { element ->
+    forEach { element ->
         if (!predicate(element)) result.add(element)
     }
     return result
@@ -86,7 +68,7 @@ inline fun List<Long>.filterNot(predicate: (Long) -> Boolean): LongList {
  */
 fun List<Long?>.filterNotNull(): LongList {
     val result = MutableLongList()
-    fastForEach { element ->
+    forEach { element ->
         element?.let { result.add(it) }
     }
     return result
@@ -97,7 +79,7 @@ fun List<Long?>.filterNotNull(): LongList {
  */
 inline fun List<Float>.filter(predicate: (Float) -> Boolean): FloatList {
     val result = MutableFloatList()
-    fastForEach { element ->
+    forEach { element ->
         if (predicate(element)) result.add(element)
     }
     return result
@@ -108,7 +90,7 @@ inline fun List<Float>.filter(predicate: (Float) -> Boolean): FloatList {
  */
 inline fun List<Float>.filterNot(predicate: (Float) -> Boolean): FloatList {
     val result = MutableFloatList()
-    fastForEach { element ->
+    forEach { element ->
         if (!predicate(element)) result.add(element)
     }
     return result
@@ -119,7 +101,7 @@ inline fun List<Float>.filterNot(predicate: (Float) -> Boolean): FloatList {
  */
 fun List<Float?>.filterNotNull(): FloatList {
     val result = MutableFloatList()
-    fastForEach { element ->
+    forEach { element ->
         element?.let { result.add(it) }
     }
     return result
@@ -130,7 +112,7 @@ fun List<Float?>.filterNotNull(): FloatList {
  */
 inline fun List<Double>.filter(predicate: (Double) -> Boolean): DoubleList {
     val result = MutableDoubleList()
-    fastForEach { element ->
+    forEach { element ->
         if (predicate(element)) result.add(element)
     }
     return result
@@ -141,7 +123,7 @@ inline fun List<Double>.filter(predicate: (Double) -> Boolean): DoubleList {
  */
 inline fun List<Double>.filterNot(predicate: (Double) -> Boolean): DoubleList {
     val result = MutableDoubleList()
-    fastForEach { element ->
+    forEach { element ->
         if (!predicate(element)) result.add(element)
     }
     return result
@@ -152,7 +134,7 @@ inline fun List<Double>.filterNot(predicate: (Double) -> Boolean): DoubleList {
  */
 fun List<Double?>.filterNotNull(): DoubleList {
     val result = MutableDoubleList()
-    fastForEach { element ->
+    forEach { element ->
         element?.let { result.add(it) }
     }
     return result

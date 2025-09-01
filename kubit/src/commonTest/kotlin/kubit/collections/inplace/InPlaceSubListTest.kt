@@ -7,7 +7,7 @@ class InPlaceSubListTest {
     fun `size is calculated correctly`() {
         val list = List(100) { it }
         val sublist = InPlaceSubList(list, 10, 50)
-        assertEquals(41, sublist.size)
+        assertEquals(40, sublist.size)
     }
 
     @Test
@@ -16,7 +16,7 @@ class InPlaceSubListTest {
         val sublist = InPlaceSubList(list, 10, 50)
         assertEquals(10, sublist[0])
         assertEquals(30, sublist[20])
-        assertEquals(50, sublist[40])
+        assertEquals(49, sublist[39])
     }
 
     @Test
@@ -34,7 +34,7 @@ class InPlaceSubListTest {
         val sublist = InPlaceSubList(list, 10, 20)
         val collected = mutableListOf<Int>()
         sublist.fastForEach { collected.add(it) }
-        assertEquals(List(11) { it + 10 }, collected)
+        assertEquals(List(10) { it + 10 }, collected)
     }
 
     @Test
@@ -48,17 +48,16 @@ class InPlaceSubListTest {
 
 
     @Test
-    fun `sublist with end index equal to start index has size 1`() {
+    fun `sublist with end index equal to start index has size 0`() {
         val list = List(50) { it }
         val sublist = InPlaceSubList(list, 10, 10)
-        assertEquals(1, sublist.size)
-        assertEquals(10, sublist[0])
+        assertEquals(0, sublist.size)
     }
 
     @Test
     fun `sublist covering entire original list`() {
         val list = List(50) { it }
-        val sublist = InPlaceSubList(list, 0, 49)
+        val sublist = InPlaceSubList(list, 0, 50)
         assertEquals(50, sublist.size)
         sublist.fastForEachIndexed { i, value ->
             assertEquals(i, value)

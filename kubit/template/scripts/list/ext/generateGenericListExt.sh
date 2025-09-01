@@ -25,28 +25,6 @@ import kubit.collections.list.*
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 EOF
 
-# Write fastForEach and fastForEachIndexed once
-cat >> "$targetFile" << EOF
-
-/**
- * A fast forEach implementation that uses a for-loop for RandomAccess Lists
- * and falls back to forEach for other List types.
- */
-inline fun <T> List<T>.fastForEach(action: (T) -> Unit) {
-    if (this is RandomAccess) for (i in indices) action(this[i])
-    else forEach(action)
-}
-
-/**
- * A fast forEachIndexed implementation that uses a for-loop for RandomAccess Lists
- * and falls back to forEachIndexed for other List types.
- */
-inline fun <T> List<T>.fastForEachIndexed(action: (Int, T) -> Unit) {
-    if (this is RandomAccess) for (i in indices) action(i, this[i])
-    else forEachIndexed(action)
-}
-EOF
-
 # Generate filter and filterNot and filterNotNull for each primitive type
 for primitive in "${primitives[@]}"; do
     listType="${primitive}List"
@@ -59,7 +37,7 @@ cat >> "$targetFile" << EOF
  */
 inline fun List<$primitive>.filter(predicate: ($primitive) -> Boolean): $listType {
     val result = $mutableType()
-    fastForEach { element ->
+    forEach { element ->
         if (predicate(element)) result.add(element)
     }
     return result
@@ -70,7 +48,7 @@ inline fun List<$primitive>.filter(predicate: ($primitive) -> Boolean): $listTyp
  */
 inline fun List<$primitive>.filterNot(predicate: ($primitive) -> Boolean): $listType {
     val result = $mutableType()
-    fastForEach { element ->
+    forEach { element ->
         if (!predicate(element)) result.add(element)
     }
     return result
@@ -81,7 +59,7 @@ inline fun List<$primitive>.filterNot(predicate: ($primitive) -> Boolean): $list
  */
 fun List<$nullablePrimitive>.filterNotNull(): $listType {
     val result = $mutableType()
-    fastForEach { element ->
+    forEach { element ->
         element?.let { result.add(it) }
     }
     return result

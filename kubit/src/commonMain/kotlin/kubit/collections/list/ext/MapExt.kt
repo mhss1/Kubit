@@ -14,7 +14,7 @@ import kubit.collections.list.*
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.map(transform: (T) -> Int): IntList {
     return MutableIntList(size).also { result ->
-        fastForEach { element ->
+        forEach { element ->
             result.content[result._size++] = transform(element)
         }
     }
@@ -26,7 +26,7 @@ inline fun <T> List<T>.map(transform: (T) -> Int): IntList {
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.mapNotNull(transform: (T) -> Int?): IntList {
     val result = MutableIntList()
-    fastForEach { element ->
+    forEach { element ->
         transform(element)?.let { result.add(it) }
     }
     return result
@@ -38,7 +38,7 @@ inline fun <T> List<T>.mapNotNull(transform: (T) -> Int?): IntList {
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.map(transform: (T) -> Long): LongList {
     return MutableLongList(size).also { result ->
-        fastForEach { element ->
+        forEach { element ->
             result.content[result._size++] = transform(element)
         }
     }
@@ -50,7 +50,7 @@ inline fun <T> List<T>.map(transform: (T) -> Long): LongList {
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.mapNotNull(transform: (T) -> Long?): LongList {
     val result = MutableLongList()
-    fastForEach { element ->
+    forEach { element ->
         transform(element)?.let { result.add(it) }
     }
     return result
@@ -62,7 +62,7 @@ inline fun <T> List<T>.mapNotNull(transform: (T) -> Long?): LongList {
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.map(transform: (T) -> Float): FloatList {
     return MutableFloatList(size).also { result ->
-        fastForEach { element ->
+        forEach { element ->
             result.content[result._size++] = transform(element)
         }
     }
@@ -74,7 +74,7 @@ inline fun <T> List<T>.map(transform: (T) -> Float): FloatList {
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.mapNotNull(transform: (T) -> Float?): FloatList {
     val result = MutableFloatList()
-    fastForEach { element ->
+    forEach { element ->
         transform(element)?.let { result.add(it) }
     }
     return result
@@ -86,7 +86,7 @@ inline fun <T> List<T>.mapNotNull(transform: (T) -> Float?): FloatList {
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.map(transform: (T) -> Double): DoubleList {
     return MutableDoubleList(size).also { result ->
-        fastForEach { element ->
+        forEach { element ->
             result.content[result._size++] = transform(element)
         }
     }
@@ -98,7 +98,7 @@ inline fun <T> List<T>.map(transform: (T) -> Double): DoubleList {
 @OverloadResolutionByLambdaReturnType
 inline fun <T> List<T>.mapNotNull(transform: (T) -> Double?): DoubleList {
     val result = MutableDoubleList()
-    fastForEach { element ->
+    forEach { element ->
         transform(element)?.let { result.add(it) }
     }
     return result
