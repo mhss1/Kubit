@@ -93,7 +93,7 @@ public sealed class IntList(initialCapacity: Int) {
     /**
      * Returns an [IntRange] of the valid indices for this [IntList].
      */
-    public inline val indices: kotlin.ranges.IntRange get() = 0 until _size
+    public inline val indices: IntRange get() = 0 until _size
 
     /**
      * Returns `true` if the collection has no elements in it.
