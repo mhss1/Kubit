@@ -30,7 +30,6 @@ import kubit.collections.list.internal.throwIllegalArgumentException
 import kubit.collections.list.internal.throwIndexOutOfBoundsException
 import kubit.collections.list.internal.throwNoSuchElementException
 import kubit.collections.list.internal.EmptyDoubleArray
-import androidx.annotation.IntRange
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 import kotlin.jvm.JvmField
@@ -83,14 +82,12 @@ public sealed class DoubleList(initialCapacity: Int) {
     /**
      * The number of elements in the [DoubleList].
      */
-    @get:IntRange(from = 0)
     public inline val size: Int
         get() = _size
 
     /**
      * Returns the last valid index in the [DoubleList]. This can be `-1` when the list is empty.
      */
-    @get:IntRange(from = -1)
     public inline val lastIndex: Int get() = _size - 1
 
     /**
@@ -394,7 +391,7 @@ public sealed class DoubleList(initialCapacity: Int) {
      * Returns the element at the given [index] or throws [IndexOutOfBoundsException] if
      * the [index] is out of bounds of this collection.
      */
-    public operator fun get(@IntRange(from = 0) index: Int): Double {
+    public operator fun get(index: Int): Double {
         if (index !in 0 until _size) {
             throwIndexOutOfBoundsException("Index must be between 0 and size")
         }
@@ -405,7 +402,7 @@ public sealed class DoubleList(initialCapacity: Int) {
      * Returns the element at the given [index] or throws [IndexOutOfBoundsException] if
      * the [index] is out of bounds of this collection.
      */
-    public fun elementAt(@IntRange(from = 0) index: Int): Double {
+    public fun elementAt(index: Int): Double {
         if (index !in 0 until _size) {
             throwIndexOutOfBoundsException("Index must be between 0 and size")
         }
@@ -420,7 +417,7 @@ public sealed class DoubleList(initialCapacity: Int) {
      * an index not in the list.
      */
     public inline fun elementAtOrElse(
-        @IntRange(from = 0) index: Int,
+        index: Int,
         defaultValue: (index: Int) -> Double
     ): Double {
         if (index !in 0 until _size) {
@@ -943,7 +940,7 @@ public class MutableDoubleList(
      * elements at [index] and after, if any.
      * @throws IndexOutOfBoundsException if [index] isn't between 0 and [size], inclusive
      */
-    public fun add(@IntRange(from = 0) index: Int, element: Double) {
+    public fun add(index: Int, element: Double) {
         if (index !in 0.._size) {
             throwIndexOutOfBoundsException("Index must be between 0 and size")
         }
@@ -968,7 +965,7 @@ public class MutableDoubleList(
      * @throws IndexOutOfBoundsException if [index] isn't between 0 and [size], inclusive.
      */
     public fun addAll(
-        @IntRange(from = 0) index: Int,
+        index: Int,
         elements: DoubleArray
     ): Boolean {
         if (index !in 0.._size) {
@@ -997,7 +994,7 @@ public class MutableDoubleList(
      * @throws IndexOutOfBoundsException if [index] isn't between 0 and [size], inclusive
      */
     public fun addAll(
-        @IntRange(from = 0) index: Int,
+        index: Int,
         elements: DoubleList
     ): Boolean {
         if (index !in 0.._size) {
@@ -1172,7 +1169,7 @@ public class MutableDoubleList(
      * Removes the element at the given [index] and returns it.
      * @throws IndexOutOfBoundsException if [index] isn't between 0 and [lastIndex], inclusive
      */
-    public fun removeAt(@IntRange(from = 0) index: Int): Double {
+    public fun removeAt(index: Int): Double {
         if (index !in 0 until _size) {
             throwIndexOutOfBoundsException("Index must be between 0 and size")
         }
@@ -1196,8 +1193,8 @@ public class MutableDoubleList(
      * @throws IllegalArgumentException if [start] is greater than [end]
      */
     public fun removeRange(
-        @IntRange(from = 0) start: Int,
-        @IntRange(from = 0) end: Int
+        start: Int,
+        end: Int
     ) {
         if (start !in 0.._size || end !in 0.._size) {
             throwIndexOutOfBoundsException("Index must be between 0 and size")
@@ -1240,7 +1237,7 @@ public class MutableDoubleList(
      * @throws IndexOutOfBoundsException if [index] isn't between 0 and [lastIndex], inclusive
      */
     public operator fun set(
-        @IntRange(from = 0) index: Int,
+        index: Int,
         element: Double
     ): Double {
         if (index !in 0 until _size) {

@@ -30,7 +30,6 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(libs.androidx.annotation)
                 implementation(libs.kotlinx.serialization.core)
             }
         }

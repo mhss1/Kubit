@@ -30,7 +30,6 @@ import kubit.collections.list.internal.throwIllegalArgumentException
 import kubit.collections.list.internal.throwIndexOutOfBoundsException
 import kubit.collections.list.internal.throwNoSuchElementException
 import kubit.collections.list.internal.EmptyFloatArray
-import androidx.annotation.IntRange
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 import kotlin.jvm.JvmField
@@ -83,14 +82,12 @@ public sealed class FloatList(initialCapacity: Int) {
     /**
      * The number of elements in the [FloatList].
      */
-    @get:IntRange(from = 0)
     public inline val size: Int
         get() = _size
 
     /**
      * Returns the last valid index in the [FloatList]. This can be `-1` when the list is empty.
      */
-    @get:IntRange(from = -1)
     public inline val lastIndex: Int get() = _size - 1
 
     /**
@@ -394,7 +391,7 @@ public sealed class FloatList(initialCapacity: Int) {
      * Returns the element at the given [index] or throws [IndexOutOfBoundsException] if
      * the [index] is out of bounds of this collection.
      */
-    public operator fun get(@IntRange(from = 0) index: Int): Float {
+    public operator fun get(index: Int): Float {
         if (index !in 0 until _size) {
             throwIndexOutOfBoundsException("Index must be between 0 and size")
         }
@@ -405,7 +402,7 @@ public sealed class FloatList(initialCapacity: Int) {
      * Returns the element at the given [index] or throws [IndexOutOfBoundsException] if
      * the [index] is out of bounds of this collection.
      */
-    public fun elementAt(@IntRange(from = 0) index: Int): Float {
+    public fun elementAt(index: Int): Float {
         if (index !in 0 until _size) {
             throwIndexOutOfBoundsException("Index must be between 0 and size")
         }
@@ -420,7 +417,7 @@ public sealed class FloatList(initialCapacity: Int) {
      * an index not in the list.
      */
     public inline fun elementAtOrElse(
-        @IntRange(from = 0) index: Int,
+        index: Int,
         defaultValue: (index: Int) -> Float
     ): Float {
         if (index !in 0 until _size) {
@@ -943,7 +940,7 @@ public class MutableFloatList(
      * elements at [index] and after, if any.
      * @throws IndexOutOfBoundsException if [index] isn't between 0 and [size], inclusive
      */
-    public fun add(@IntRange(from = 0) index: Int, element: Float) {
+    public fun add(index: Int, element: Float) {
         if (index !in 0.._size) {
             throwIndexOutOfBoundsException("Index must be between 0 and size")
         }
@@ -968,7 +965,7 @@ public class MutableFloatList(
      * @throws IndexOutOfBoundsException if [index] isn't between 0 and [size], inclusive.
      */
     public fun addAll(
-        @IntRange(from = 0) index: Int,
+        index: Int,
         elements: FloatArray
     ): Boolean {
         if (index !in 0.._size) {
@@ -997,7 +994,7 @@ public class MutableFloatList(
      * @throws IndexOutOfBoundsException if [index] isn't between 0 and [size], inclusive
      */
     public fun addAll(
-        @IntRange(from = 0) index: Int,
+        index: Int,
         elements: FloatList
     ): Boolean {
         if (index !in 0.._size) {
@@ -1172,7 +1169,7 @@ public class MutableFloatList(
      * Removes the element at the given [index] and returns it.
      * @throws IndexOutOfBoundsException if [index] isn't between 0 and [lastIndex], inclusive
      */
-    public fun removeAt(@IntRange(from = 0) index: Int): Float {
+    public fun removeAt(index: Int): Float {
         if (index !in 0 until _size) {
             throwIndexOutOfBoundsException("Index must be between 0 and size")
         }
@@ -1196,8 +1193,8 @@ public class MutableFloatList(
      * @throws IllegalArgumentException if [start] is greater than [end]
      */
     public fun removeRange(
-        @IntRange(from = 0) start: Int,
-        @IntRange(from = 0) end: Int
+        start: Int,
+        end: Int
     ) {
         if (start !in 0.._size || end !in 0.._size) {
             throwIndexOutOfBoundsException("Index must be between 0 and size")
@@ -1240,7 +1237,7 @@ public class MutableFloatList(
      * @throws IndexOutOfBoundsException if [index] isn't between 0 and [lastIndex], inclusive
      */
     public operator fun set(
-        @IntRange(from = 0) index: Int,
+        index: Int,
         element: Float
     ): Float {
         if (index !in 0 until _size) {
