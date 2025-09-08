@@ -1,6 +1,6 @@
 package kubit.collections.list.ext
 
-import kubit.collections.list.internal.throwIllegalArgumentException
+import kubit.collections.internal.throwIllegalArgumentException
 
 /**
  * Returns `true` if at least [n] elements in the list match the given [predicate].

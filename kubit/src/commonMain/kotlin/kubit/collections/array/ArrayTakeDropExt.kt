@@ -1,7 +1,7 @@
 package kubit.collections.array
 
 import kubit.collections.list.*
-import kubit.collections.list.internal.requirePrecondition
+import kubit.collections.internal.requirePrecondition
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 // DO NOT MAKE CHANGES to this kotlin file.

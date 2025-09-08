@@ -1,4 +1,4 @@
-package kubit.collections.list.internal
+package kubit.collections.internal
 
 internal val EmptyIntArray = IntArray(0)
 

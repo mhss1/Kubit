@@ -9,6 +9,9 @@ scriptDir=$(cd "$(dirname "$0")" && pwd)
 "${scriptDir}/list/generatePrimitiveLists.sh"
 echo ""
 
+# Deques
+"${scriptDir}/deque/generatePrimitiveDeques.sh"
+
 # List Map
 "${scriptDir}/list/ext/generateMapExt.sh"
 "${scriptDir}/list/ext/generateMapExtTest.sh"

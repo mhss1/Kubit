@@ -1,5 +1,6 @@
 package kubit.collections.inplace
 
+import kubit.collections.internal.throwIndexOutOfBoundsException
 import kotlin.jvm.JvmField
 
 /**

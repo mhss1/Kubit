@@ -1,6 +1,6 @@
 package kubit.string
 
-import kubit.collections.inplace.throwIndexOutOfBoundsException
+import kubit.collections.internal.throwIndexOutOfBoundsException
 import kotlin.jvm.JvmField
 
 class InPlaceCharSequence @PublishedApi internal constructor(

@@ -1,7 +1,7 @@
 package kubit.collections.array
 
-import kubit.collections.inplace.throwIndexOutOfBoundsException
-import kubit.collections.list.internal.throwIllegalArgumentException
+import kubit.collections.internal.throwIndexOutOfBoundsException
+import kubit.collections.internal.throwIllegalArgumentException
 import kotlin.jvm.JvmField
 
 @PublishedApi
