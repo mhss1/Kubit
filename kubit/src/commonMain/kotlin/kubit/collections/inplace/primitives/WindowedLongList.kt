@@ -1,6 +1,6 @@
 package kubit.collections.inplace.primitives
 
-import kubit.collections.inplace.throwIndexOutOfBoundsException
+import kubit.collections.internal.throwIndexOutOfBoundsException
 import kubit.collections.list.LongList
 import kotlin.jvm.JvmField
 

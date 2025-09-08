@@ -26,10 +26,10 @@
 package kubit.collections.list
 
 
-import kubit.collections.list.internal.throwIllegalArgumentException
-import kubit.collections.list.internal.throwIndexOutOfBoundsException
-import kubit.collections.list.internal.throwNoSuchElementException
-import kubit.collections.list.internal.EmptyIntArray
+import kubit.collections.internal.throwIllegalArgumentException
+import kubit.collections.internal.throwIndexOutOfBoundsException
+import kubit.collections.internal.throwNoSuchElementException
+import kubit.collections.internal.EmptyIntArray
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 import kotlin.jvm.JvmField

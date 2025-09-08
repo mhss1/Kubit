@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package kubit.collections.list.internal
+package kubit.collections.internal
 
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
@@ -35,12 +35,13 @@ internal fun throwIllegalArgumentException(message: String) {
     throw IllegalArgumentException(message)
 }
 
-// Like Kotlin's require() but without the .toString() call
-@Suppress("BanInlineOptIn") // same opt-in as using Kotlin's require()
+@Suppress("BanInlineOptIn")
 @OptIn(ExperimentalContracts::class)
 internal inline fun requirePrecondition(value: Boolean, lazyMessage: () -> String) {
     contract { returns() implies value }
-    if (!value) {
-        throwIllegalArgumentException(lazyMessage())
-    }
+    if (!value) throwIllegalArgumentException(lazyMessage())
+}
+
+internal fun throwIndexOutOfBoundsException(index: Int, size: Int) {
+    throw IndexOutOfBoundsException("index: $index, size: $size")
 }

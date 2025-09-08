@@ -1,0 +1,451 @@
+package kubit.collections.deque
+
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertTrue
+import kotlin.test.assertFalse
+import kotlin.test.assertNull
+import kotlin.test.assertFailsWith
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// DO NOT MAKE CHANGES to the kotlin source file.
+//
+// This file was generated from a template in the template directory.
+// Make a change to the original template and run the generatePrimitiveDeques.sh script
+// to ensure the change is available on all versions of the deque.
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+class PKeyDequeTest {
+
+    private fun PKeyDeque.toList(): List<PKey> {
+        val result = mutableListOf<PKey>()
+        forEach { result += it }
+        return result
+    }
+
+    @Test
+    fun constructorNegativeCapacity() {
+        assertFailsWith<IllegalArgumentException> { PKeyDeque(-1) }
+    }
+
+    @Test
+    fun emptyState() {
+        val d = PKeyDeque(0)
+        assertEquals(0, d.size)
+        assertTrue(d.isEmpty())
+        assertFalse(d.isNotEmpty())
+        assertFailsWith<NoSuchElementException> { d.first() }
+        assertFailsWith<NoSuchElementException> { d.last() }
+        assertNull(d.firstOrNull())
+        assertNull(d.lastOrNull())
+        assertNull(d.removeFirstOrNull())
+        assertNull(d.removeLastOrNull())
+    }
+
+    @Test
+    fun addLastAndIteration() {
+        val d = PKeyDeque(1)
+        for (i in 0 until 10) d.addLast(i.toPKey())
+        assertEquals((0 until 10).map { it.toPKey() }, d.toList())
+        assertEquals(10, d.size)
+        assertEquals(0KeySuffix, d.first())
+        assertEquals(9KeySuffix, d.last())
+    }
+
+    @Test
+    fun addFirst() {
+        val d = PKeyDeque(2)
+        for (i in 0 until 5) d.addFirst(i.toPKey())
+        assertEquals(listOf(4KeySuffix,3KeySuffix,2KeySuffix,1KeySuffix,0KeySuffix), d.toList())
+        assertEquals(5, d.size)
+        assertEquals(4KeySuffix, d.first())
+        assertEquals(0KeySuffix, d.last())
+    }
+
+    @Test
+    fun addAlias() {
+        val d = PKeyDeque(2)
+        d.add(1KeySuffix)
+        d.add(2KeySuffix)
+        assertEquals(listOf(1KeySuffix,2KeySuffix), d.toList())
+    }
+
+    @Test
+    fun setReturnsOld() {
+        val d = PKeyDeque(4)
+        d.addLast(1KeySuffix); d.addLast(2KeySuffix); d.addLast(3KeySuffix)
+        val old = d.set(1, 9KeySuffix)
+        assertEquals(2KeySuffix, old)
+        assertEquals(listOf(1KeySuffix,9KeySuffix,3KeySuffix), d.toList())
+    }
+
+    @Test
+    fun getSetOutOfBounds() {
+        val d = PKeyDeque(1)
+        d.addLast(1KeySuffix)
+        assertFailsWith<IndexOutOfBoundsException> { d[1] }
+        assertFailsWith<IndexOutOfBoundsException> { d[-1] }
+        assertFailsWith<IndexOutOfBoundsException> { d.set(1, 2KeySuffix) }
+        assertFailsWith<IndexOutOfBoundsException> { d.set(-1, 2KeySuffix) }
+    }
+
+    @Test
+    fun addIndexOutOfBounds() {
+        val d = PKeyDeque(2)
+        assertFailsWith<IndexOutOfBoundsException> { d.add(-1, 1KeySuffix) }
+        assertFailsWith<IndexOutOfBoundsException> { d.add(1, 1KeySuffix) }
+        d.addLast(5KeySuffix)
+        assertFailsWith<IndexOutOfBoundsException> { d.add(3, 2KeySuffix) }
+    }
+
+    @Test
+    fun removeIndexOutOfBounds() {
+        val d = PKeyDeque(2)
+        assertFailsWith<IndexOutOfBoundsException> { d.removeAt(0) }
+        d.addLast(1KeySuffix)
+        assertFailsWith<IndexOutOfBoundsException> { d.removeAt(1) }
+        assertFailsWith<IndexOutOfBoundsException> { d.removeAt(-1) }
+    }
+
+    @Test
+    fun removeFirstLast() {
+        val d = PKeyDeque(3)
+        d.addLast(1KeySuffix); d.addLast(2KeySuffix); d.addLast(3KeySuffix)
+        assertEquals(1KeySuffix, d.removeFirst())
+        assertEquals(3KeySuffix, d.removeLast())
+        assertEquals(listOf(2KeySuffix), d.toList())
+        assertEquals(1, d.size)
+    }
+
+    @Test
+    fun removeFirstLastEmptyExceptions() {
+        val d = PKeyDeque(1)
+        assertFailsWith<NoSuchElementException> { d.removeFirst() }
+        assertFailsWith<NoSuchElementException> { d.removeLast() }
+    }
+
+    @Test
+    fun removeFirstLastOrNull() {
+        val d = PKeyDeque(2)
+        assertNull(d.removeFirstOrNull())
+        assertNull(d.removeLastOrNull())
+        d.addLast(1KeySuffix)
+        assertEquals(1KeySuffix, d.removeFirstOrNull())
+        d.addLast(2KeySuffix)
+        assertEquals(2KeySuffix, d.removeLastOrNull())
+    }
+
+    @Test
+    fun clearResets() {
+        val d = PKeyDeque(4)
+        repeat(5) { d.addLast(it.toPKey()) }
+        d.clear()
+        assertTrue(d.isEmpty())
+        d.addLast(10KeySuffix)
+        assertEquals(listOf(10KeySuffix), d.toList())
+    }
+
+    @Test
+    fun addIndexShiftBackContiguous() {
+        val d = PKeyDeque(8)
+        repeat(5) { d.addLast(it.toPKey()) }
+        d.add(1, 99KeySuffix)
+        assertEquals(listOf(0KeySuffix,99KeySuffix,1KeySuffix,2KeySuffix,3KeySuffix,4KeySuffix), d.toList())
+    }
+
+    @Test
+    fun addIndexShiftForwardContiguous() {
+        val d = PKeyDeque(8)
+        repeat(6) { d.addLast(it.toPKey()) }
+        d.add(5, 77KeySuffix)
+        assertEquals(listOf(0KeySuffix,1KeySuffix,2KeySuffix,3KeySuffix,4KeySuffix,77KeySuffix,5KeySuffix), d.toList())
+    }
+
+    @Test
+    fun removeAtShiftBackContiguous() {
+        val d = PKeyDeque(8)
+        repeat(6) { d.addLast(it.toPKey()) }
+        val removed = d.removeAt(1)
+        assertEquals(1KeySuffix, removed)
+        assertEquals(listOf(0KeySuffix,2KeySuffix,3KeySuffix,4KeySuffix,5KeySuffix), d.toList())
+    }
+
+    @Test
+    fun removeAtShiftForwardContiguous() {
+        val d = PKeyDeque(8)
+        repeat(7) { d.addLast(it.toPKey()) }
+        val removed = d.removeAt(5)
+        assertEquals(5KeySuffix, removed)
+        assertEquals(listOf(0KeySuffix,1KeySuffix,2KeySuffix,3KeySuffix,4KeySuffix,6KeySuffix), d.toList())
+    }
+
+    private fun buildDeque(startIndex: Int, capacity: Int, size: Int): PKeyDeque {
+        require(capacity >= 0)
+        require(size >= 0 && size <= capacity)
+        val d = PKeyDeque(capacity)
+        if (capacity == 0) return d
+        require(startIndex in 0 until capacity)
+        d.head = startIndex
+        d._size = size
+        for (i in 0 until size) {
+            d.data[(startIndex + i) % capacity] = (i + 1).toPKey()
+        }
+        return d
+    }
+
+    @Test
+    fun addIndexShiftBackWrapped() {
+        val d = buildDeque(3, 5, 4)
+        d.add(1, 99KeySuffix)
+        assertEquals(listOf(1KeySuffix,99KeySuffix,2KeySuffix,3KeySuffix,4KeySuffix), d.toList())
+    }
+
+    @Test
+    fun addIndexShiftForwardWrapped() {
+        val d = buildDeque(3, 5, 4)
+        d.add(3, 77KeySuffix)
+        assertEquals(listOf(1KeySuffix,2KeySuffix,3KeySuffix,77KeySuffix,4KeySuffix), d.toList())
+    }
+
+    @Test
+    fun removeAtShiftForwardWrapped() {
+        val d = buildDeque(3, 5, 4)
+        val removed = d.removeAt(1)
+        assertEquals(2KeySuffix, removed)
+        assertEquals(listOf(1KeySuffix,3KeySuffix,4KeySuffix), d.toList())
+    }
+
+    @Test
+    fun removeAtShiftBackWrapped() {
+        val d = buildDeque(3, 5, 4)
+        val removed = d.removeAt(2)
+        assertEquals(3KeySuffix, removed)
+        assertEquals(listOf(1KeySuffix,2KeySuffix,4KeySuffix), d.toList())
+    }
+
+    @Test
+    fun removeAtShiftBackContiguousTailZero() {
+        val d = buildDeque(2, 5, 3)
+        val removed = d.removeAt(1)
+        assertEquals(2KeySuffix, removed)
+        assertEquals(listOf(1KeySuffix,3KeySuffix), d.toList())
+    }
+
+    @Test
+    fun ensureCapacityFromWrappedMaintainsOrder() {
+        val d = buildDeque(3, 5, 4)
+        d.addLast(5KeySuffix)
+        d.addLast(6KeySuffix)
+        d.addLast(7KeySuffix)
+        assertEquals(listOf(1KeySuffix,2KeySuffix,3KeySuffix,4KeySuffix,5KeySuffix,6KeySuffix,7KeySuffix), d.toList())
+    }
+
+    @Test
+    fun forEachVariantsContiguous() {
+        val d = PKeyDeque(10)
+        repeat(5) { d.addLast(it.toPKey()) }
+        val forward = mutableListOf<PKey>()
+        val reverse = mutableListOf<PKey>()
+        val forwardIndexed = mutableListOf<Pair<Int,PKey>>()
+        val reverseIndexed = mutableListOf<Pair<Int,PKey>>()
+        d.forEach { forward += it }
+        d.forEachReversed { reverse += it }
+        d.forEachIndexed { idx, v -> forwardIndexed += idx to v }
+        d.forEachReversedIndexed { idx, v -> reverseIndexed += idx to v }
+        assertEquals(listOf(0KeySuffix,1KeySuffix,2KeySuffix,3KeySuffix,4KeySuffix), forward)
+        assertEquals(listOf(4KeySuffix,3KeySuffix,2KeySuffix,1KeySuffix,0KeySuffix), reverse)
+        assertEquals(listOf(0 to 0KeySuffix,1 to 1KeySuffix,2 to 2KeySuffix,3 to 3KeySuffix,4 to 4KeySuffix), forwardIndexed)
+        assertEquals(listOf(4 to 4KeySuffix,3 to 3KeySuffix,2 to 2KeySuffix,1 to 1KeySuffix,0 to 0KeySuffix), reverseIndexed)
+    }
+
+    @Test
+    fun forEachVariantsWrapped() {
+        val d = buildDeque(3, 5, 4)
+        val f = mutableListOf<PKey>()
+        val r = mutableListOf<PKey>()
+        d.forEach { f += it }
+        d.forEachReversed { r += it }
+        assertEquals(listOf(1KeySuffix,2KeySuffix,3KeySuffix,4KeySuffix), f)
+        assertEquals(listOf(4KeySuffix,3KeySuffix,2KeySuffix,1KeySuffix), r)
+    }
+
+    @Test
+    fun forEachIndexedVariantsWrapped() {
+        val d = buildDeque(3, 5, 4)
+        val forwardIndexed = mutableListOf<Pair<Int,PKey>>()
+        val reverseIndexed = mutableListOf<Pair<Int,PKey>>()
+        d.forEachIndexed { idx, v -> forwardIndexed += idx to v }
+        d.forEachReversedIndexed { idx, v -> reverseIndexed += idx to v }
+        assertEquals(listOf(0 to 1KeySuffix,1 to 2KeySuffix,2 to 3KeySuffix,3 to 4KeySuffix), forwardIndexed)
+        assertEquals(listOf(3 to 4KeySuffix,2 to 3KeySuffix,1 to 2KeySuffix,0 to 1KeySuffix), reverseIndexed)
+    }
+
+    @Test
+    fun setOnWrappedReturnsOld() {
+        val d = buildDeque(3, 5, 4)
+        val old = d.set(2, 99KeySuffix)
+        assertEquals(3KeySuffix, old)
+        assertEquals(listOf(1KeySuffix,2KeySuffix,99KeySuffix,4KeySuffix), d.toList())
+    }
+
+    @Test
+    fun addIndexBoundariesWrapped() {
+        val d = buildDeque(3, 5, 4)
+        d.add(0, 77KeySuffix)
+        assertEquals(listOf(77KeySuffix,1KeySuffix,2KeySuffix,3KeySuffix,4KeySuffix), d.toList())
+        d.add(d.size, 88KeySuffix)
+        assertEquals(listOf(77KeySuffix,1KeySuffix,2KeySuffix,3KeySuffix,4KeySuffix,88KeySuffix), d.toList())
+    }
+
+    @Test
+    fun internalShape_3_5_2_Ops() {
+        val d = buildDeque(3, 5, 2)
+        assertEquals(listOf(1KeySuffix,2KeySuffix), d.toList())
+        val f = mutableListOf<PKey>()
+        val r = mutableListOf<PKey>()
+        d.forEach { f += it }
+        d.forEachReversed { r += it }
+        assertEquals(listOf(1KeySuffix,2KeySuffix), f)
+        assertEquals(listOf(2KeySuffix,1KeySuffix), r)
+        d.add(1, 99KeySuffix)
+        assertEquals(listOf(1KeySuffix,99KeySuffix,2KeySuffix), d.toList())
+        assertEquals(99KeySuffix, d.removeAt(1))
+        assertEquals(listOf(1KeySuffix,2KeySuffix), d.toList())
+        d.addLast(3KeySuffix)
+        d.addLast(4KeySuffix)
+        d.addLast(5KeySuffix)
+        d.addLast(6KeySuffix)
+        assertEquals(listOf(1KeySuffix,2KeySuffix,3KeySuffix,4KeySuffix,5KeySuffix,6KeySuffix), d.toList())
+    }
+
+    @Test
+    fun internalShape_1_5_3_Ops() {
+        val d = buildDeque(1, 5, 3)
+        assertEquals(listOf(1KeySuffix,2KeySuffix,3KeySuffix), d.toList())
+        d.add(2, 77KeySuffix)
+        assertEquals(listOf(1KeySuffix,2KeySuffix,77KeySuffix,3KeySuffix), d.toList())
+        assertEquals(2KeySuffix, d.removeAt(1))
+        assertEquals(listOf(1KeySuffix,77KeySuffix,3KeySuffix), d.toList())
+        d.addLast(4KeySuffix)
+        d.addLast(5KeySuffix)
+        d.addLast(6KeySuffix)
+        assertEquals(listOf(1KeySuffix,77KeySuffix,3KeySuffix,4KeySuffix,5KeySuffix,6KeySuffix), d.toList())
+    }
+
+    @Test
+    fun containsAndIndexOf() {
+        val d = PKeyDeque(4)
+        d.addLast(1KeySuffix); d.addLast(2KeySuffix); d.addLast(1KeySuffix); d.addLast(3KeySuffix)
+        assertTrue(1KeySuffix in d)
+        assertTrue(d.contains(2KeySuffix))
+        assertFalse(d.contains(9KeySuffix))
+        assertEquals(0, d.indexOf(1KeySuffix))
+        assertEquals(2, d.lastIndexOf(1KeySuffix))
+        assertEquals(-1, d.indexOf(9KeySuffix))
+    }
+
+    @Test
+    fun removeAtFirstAndLastShortcuts() {
+        val d = PKeyDeque(5)
+        d.addLast(1KeySuffix); d.addLast(2KeySuffix); d.addLast(3KeySuffix)
+        assertEquals(1KeySuffix, d.removeAt(0))
+        assertEquals(3KeySuffix, d.removeAt(d.lastIndex))
+        assertEquals(listOf(2KeySuffix), d.toList())
+    }
+
+    @Test
+    fun asMutableListViewReflectsChanges() {
+        val d = PKeyDeque(2)
+        d.addLast(1KeySuffix); d.addLast(2KeySuffix)
+
+        val view = d.asMutableList()
+        view.add(2, 3KeySuffix)
+        view.add(0, 0KeySuffix)
+        assertEquals(listOf(0KeySuffix,1KeySuffix,2KeySuffix,3KeySuffix), d.toList())
+
+        val old = view.set(1, 9KeySuffix)
+        assertEquals(1KeySuffix, old)
+        assertEquals(listOf(0KeySuffix,9KeySuffix,2KeySuffix,3KeySuffix), d.toList())
+
+        assertEquals(9KeySuffix, view.removeAt(1))
+        assertEquals(listOf(0KeySuffix,2KeySuffix,3KeySuffix), d.toList())
+    }
+
+    @Test
+    fun firstLastOrNull() {
+        val d = PKeyDeque(2)
+        assertNull(d.firstOrNull())
+        assertNull(d.lastOrNull())
+        d.addLast(5KeySuffix)
+        assertEquals(5KeySuffix, d.firstOrNull())
+        assertEquals(5KeySuffix, d.lastOrNull())
+        d.addFirst(4KeySuffix)
+        assertEquals(4KeySuffix, d.firstOrNull())
+        assertEquals(5KeySuffix, d.lastOrNull())
+    }
+
+    @Test
+    fun sizeAndLastIndex() {
+        val d = PKeyDeque(1)
+        assertEquals(-1, d.lastIndex)
+        d.addLast(1KeySuffix)
+        assertEquals(0, d.lastIndex)
+        d.addLast(2KeySuffix)
+        assertEquals(1, d.lastIndex)
+        d.removeFirst()
+        assertEquals(0, d.lastIndex)
+    }
+
+    @Test
+    fun push() {
+        val d = PKeyDeque(2)
+        d.push(1KeySuffix)
+        d.push(2KeySuffix)
+        assertEquals(listOf(2KeySuffix,1KeySuffix), d.toList())
+        assertEquals(2KeySuffix, d.first())
+    }
+
+    @Test
+    fun pop() {
+        val d = PKeyDeque(3)
+        d.addLast(1KeySuffix); d.addLast(2KeySuffix); d.addLast(3KeySuffix)
+        assertEquals(1KeySuffix, d.pop())
+        assertEquals(listOf(2KeySuffix,3KeySuffix), d.toList())
+    }
+
+    @Test
+    fun enqueue() {
+        val d = PKeyDeque(1)
+        d.enqueue(1KeySuffix)
+        d.enqueue(2KeySuffix)
+        d.enqueue(3KeySuffix)
+        assertEquals(listOf(1KeySuffix,2KeySuffix,3KeySuffix), d.toList())
+        assertEquals(3KeySuffix, d.last())
+    }
+
+    @Test
+    fun dequeue() {
+        val d = PKeyDeque(2)
+        d.addFirst(2KeySuffix)
+        d.addFirst(1KeySuffix)
+        assertEquals(1KeySuffix, d.dequeue())
+        assertEquals(listOf(2KeySuffix), d.toList())
+    }
+
+    @Test
+    fun asListReflectsChanges() {
+        val d = PKeyDeque(2)
+        d.addLast(1KeySuffix)
+        d.addLast(2KeySuffix)
+        val list = d.asList()
+        assertEquals(listOf(1KeySuffix, 2KeySuffix), list)
+
+        d.addFirst(0KeySuffix)
+        assertEquals(listOf(0KeySuffix, 1KeySuffix, 2KeySuffix), list)
+
+        d.removeLast()
+        assertEquals(listOf(0KeySuffix, 1KeySuffix), list)
+    }
+}
+
+
